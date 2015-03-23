@@ -1,5 +1,6 @@
 Outline.tex
 Version your code.tex
+Box 1: Definitions.tex
 Box 3: Branching.tex
 Box 4: What not to version control.tex
 figures/figure_1-01/figure_1-01.png
