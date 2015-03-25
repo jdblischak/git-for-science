@@ -1,4 +1,5 @@
 Outline.tex
+introduction.tex
 Version your code.tex
 Box 1: Definitions.tex
 Box 3: Branching.tex
