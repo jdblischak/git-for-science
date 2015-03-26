@@ -46,3 +46,28 @@ First, notice that the three scripts are recognized as untracked files because w
 Second, notice the use of the word "commit", which is an essential Git term.
 When used as a verb, it means "to save", e.g. "to commit a change."
 When used as a noun, it means "a version of the code", e.g. "the figure was generated using the commit from yesterday."
+Lastly, notice that it explains how we can start tracking our files.
+We need to use the command \verb|git add|.
+Let's add the file \verb|process.sh|.
+
+\begin{lstlisting}
+$ git add process.sh
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   process.sh
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        analyze.R
+        clean.py
+\end{lstlisting}
+
+Now the file \verb|process.sh| has been moved to the staging area, while both \verb|clean.py| and \verb|analyze.R| remain in the working directory.
+Adding a file to the staging area will result in the changes to that file being included in the next commit, or snapshot of the code (Figure 1).
