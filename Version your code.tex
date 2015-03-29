@@ -100,3 +100,18 @@ Date:   Sun Mar 29 14:52:05 2015 -0500
     Add initial version of thesis code.
 \end{lstlisting}
 
+Now we are free to make changes to the files knowing that we can always revert them to the state of this commit.
+As an example, we'll add the comment "# Removes samples with more than 5\% missing data" to \verb|clean.py|.
+We can view all the changes made to the tracked files since the last commit by running the command \verb|git diff|.
+
+\begin{lstlisting}
+$ git diff
+diff --git a/clean.py b/clean.py
+index e69de29..5a3e47a 100644
+--- a/clean.py
++++ b/clean.py
+@@ -0,0 +1 @@
++# Removes samples with more than 5% missing data
+\end{lstlisting}
+
+As expected, this shows us the one line that we added to \verb|clean.py|.
