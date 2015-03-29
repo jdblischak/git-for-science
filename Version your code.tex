@@ -115,3 +115,12 @@ index e69de29..5a3e47a 100644
 \end{lstlisting}
 
 As expected, this shows us the one line that we added to \verb|clean.py|.
+If we wanted to save this edit, we could add it to the staging area using \verb|git add| and then commit the change using \verb|git commit|, as we did above.
+Instead, this time we'll restore the previous version of the file using the command \verb|git checkout|.
+
+\begin{lstlisting}
+$ git checkout -- clean.py
+$ git diff
+\end{lstlisting}
+
+\verb|git diff| returns no output because \verb|git checkout| reverted \verb|clean.py| to the version in the last commit.
