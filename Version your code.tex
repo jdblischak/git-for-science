@@ -124,3 +124,11 @@ $ git diff
 \end{lstlisting}
 
 \verb|git diff| returns no output because \verb|git checkout| reverted \verb|clean.py| to the version in the last commit.
+And this ability to revert to past versions of a file is not limited to just the last commit.
+If we had committed multiple changes to the file \verb|clean.py| and then decided we wanted the original version, we could replace the argument \verb|--| with the commit ID.
+
+\begin{lstlisting}
+$ git checkout 660213b91af167d992885e45ab19f585f02d4661 clean.py
+\end{lstlisting}
+
+There are also more advanced options for reverting history that we will not cover in this quick introduction.
