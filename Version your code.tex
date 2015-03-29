@@ -87,3 +87,16 @@ $ git commit -m "Add initial version of thesis code."
 Notice we used the flag \verb|-m| to pass a message for the commit.
 This message describes the changes that have been made to the code and is required.
 If you do not pass a message at the command line, you will be entered into the default text editor for your system, usually \verb|vi| or \verb|emacs|, to enter the message.
+
+To view the record of our commit, we use the command \verb|git log|.
+For each commit, it lists the identification (ID; note that in Git terminology it referred to as the SHA-1 checksum), author, date, and message.
+
+\begin{lstlisting}
+$ git log
+commit 660213b91af167d992885e45ab19f585f02d4661
+Author: First Last <user@domain>
+Date:   Sun Mar 29 14:52:05 2015 -0500
+
+    Add initial version of thesis code.
+\end{lstlisting}
+
