@@ -1,6 +1,7 @@
 Outline.tex
 introduction.tex
 version-your-code.tex
+share-your-code.tex
 Box 1: Definitions.tex
 resources.tex
 Box 3: Branching.tex
