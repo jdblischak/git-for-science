@@ -11,3 +11,13 @@ Also, now that the code will be existing in multiple places, we need to learn so
 A local repository refers to code that is stored on the machine you are using, e.g. your laptop; whereas, a remote repository refers to the code that is hosted online.
 Thus we have just created a remote repository.
 
+Now we need to send the code on our computer to GitHub.
+The key to this is the URL that GitHub assigns your newly created remote repository.
+It will have the form \verb|https://github.com/username/reponame.git|, e.g. \verb|https://github.com/scientist123/thesis.git|.
+We'll tell Git about our remote repository using the command \verb|git remote add|.
+We use the alias name "origin" so that we don't have to type out the full URL in the future (this is the traditional name for a remote repository, but you could use another name if you liked).
+
+\begin{lstlistings}
+$ git remote add origin https://github.com/scientist123/thesis.git
+\end{lstlistings}
+
