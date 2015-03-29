@@ -71,3 +71,14 @@ Untracked files:
 
 Now the file \verb|process.sh| has been moved to the staging area, while both \verb|clean.py| and \verb|analyze.R| remain in the working directory.
 Adding a file to the staging area will result in the changes to that file being included in the next commit, or snapshot of the code (Figure 1).
+Since this will be the first commit, or version of the code, let's add the other two files as well.
+Then we'll create the first commit using the command \verb|git commit|.
+
+\begin{lstlisting}
+git add clean.py analyze.R
+git commit -m "Add initial version of thesis code."
+\end{lstlisting}
+
+Notice we used the flag \verb|-m| to pass a message for the commit.
+This message describes the changes that have been made to the code and is required.
+If you do not pass a message at the command line, you will be entered into the default text editor for your system, usually \verb|vi| or \verb|emacs|, to enter the message.
