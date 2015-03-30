@@ -7,7 +7,7 @@ conclusion.tex
 box-1-definitions.tex
 table-1-resources.tex
 box-2-branching.tex
-Box 4: What not to version control.tex
+box-3-what-not-to-version-control.tex
 figures/figure_1-01/figure_1-01.png
 figures/figure_2_v2-01/figure_2_v2-01.png
 figures/figure_3_v2-01/figure_3_v2-01.png
