@@ -4,7 +4,7 @@ version-your-code.tex
 share-your-code.tex
 contribute-to-other-projects.tex
 conclusion.tex
-Box 1: Definitions.tex
+box-1-definitions.tex
 resources.tex
 Box 3: Branching.tex
 Box 4: What not to version control.tex
