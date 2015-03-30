@@ -8,3 +8,20 @@ When contributing to a larger project with many contributors, you will not be ab
 Instead you will first need to create your own copy of the repository.
 Your copy of the repository is referred to as a fork.
 You can fork any repository on GitHub by clicking the button "Fork" on the top right of the screen.
+
+Once you have a fork of a repository, you can clone it and make changes just like a repository you created yourself.
+Let's say we created a fork of the hypothetical repository, "cool_software", so that we could fix a typo we found in the directions in the README file.
+In order to make changes, we first download it with \verb|git clone|.
+
+\begin{lstlisting}
+git clone https://github.com/scientist123/cool_project.git
+\end{lstlisting}
+
+After making the edits we want, we can add, commit, and push the changes back to our remote repository on GitHub.
+
+\begin{lstlisting}
+git add README
+git commit -m "Fix typo in documentation."
+git push origin master
+\end{lstlisting}
+
