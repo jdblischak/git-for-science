@@ -42,3 +42,15 @@ $ git clone https://github.com/scientist123/thesis.git
 
 By default, this will download the Git repository into a local directory named "thesis".
 Furthermore, the remote "origin" will automatically be added so that you can easily push your changes back to GitHub.
+
+Then the next day back at your work computer, you can update the code with the changes you made the previous evening using the command \verb|git pull|.
+
+\begin{lstlisting}
+$ git pull origin master
+\end{lstlisting}
+
+This pulls in all the commits that you had previously pushed to the GitHub remote repository.
+In this workflow, you are essentially collaborating with yourself as you work from multiple computers.
+If you are working on a project with just one or two other collaborators, you could extend this workflow so that they could edit the code in the same way.
+You can do this by adding them as Collaborators on your repository (Settings -> Collaborators -> Add collaborator).
+However, with projects with lots of contributors, GitHub provides a workflow for finer-grained control of the code development.
