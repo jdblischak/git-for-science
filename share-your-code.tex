@@ -31,3 +31,14 @@ We first specify the remote repository, "origin", followed by the name of the br
 Branches are parallel versions of the code, but we will not cover them in depth in this tutorial (Box 3).
 As we have seen, we can already accomplish a lot when only using one branch.
 
+Pushing to GitHub also has the added benefit of backing up your code in case anything were to happen to your computer.
+Also, it can be used to sync your code across multiple machines, similar to a service like Dropbox, but with the added control of Git.
+For example, let's say we wanted to work on our code on our computer at home.
+We can download the Git repository using the command \verb|git clone|.
+
+\begin{lstlisting}
+$ git clone https://github.com/scientist123/thesis.git
+\end{lstlisting}
+
+By default, this will download the Git repository into a local directory named "thesis".
+Furthermore, the remote "origin" will automatically be added so that you can easily push your changes back to GitHub.
