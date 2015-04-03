@@ -1,6 +1,8 @@
 \subsection{Introduction to version control}
 
-A few key problems arise when writing large amounts of code.
+Many scientists write code as part of their research.
+Just as experiments are logged in laboratory notebooks, it is important to document the code you write.
+A few key problems arise when iteratively developing code.
 First, you often need to experiment with new ideas, such as adding new features or increasing the speed of a bottleneck, but you don't want to risk breaking the currently working code.
 The simplest solution is to copy the script before making new edits.
 However, this can quickly become a problem because it clutters your filesystem with uniformative filenames, e.g. \verb|analysis.sh|, \verb|analysis_02.sh|, \verb|analysis_03.sh|, etc.
@@ -14,7 +16,7 @@ Thus you can experiment with new ideas but always have the option to revert to a
 Furthermore, you can record messages as you save each successive version so that you (or anyone else) reviewing the development history of the code is able to understand the rationale for the given edits.
 Also, it facilitates collaboration.
 Using version control software, your collaborators can make and save changes to the code, and you can automatically incorporate these changes to the main code base.
-And the collaborative aspect is enhanced with the emergence of websites that host version controlled code.
+The collaborative aspect is enhanced with the emergence of websites that host version controlled code.
 
 In this quick guide, we introduce you to one version control system (VCS), Git (\href{http://git-scm.com/}{git-scm.com}), and one online hosting site, GitHub (\href{https://github.com}{github.com}), both of which are currently popular among scientists and programmers in general.
 But more importantly, we hope to convince you that although adopting all the functionality of a given VCS has a steep learning curve, you can already achieve great benefits by getting started using a few simple commands.
