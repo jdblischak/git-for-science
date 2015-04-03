@@ -1,8 +1,14 @@
 \subsection{Version your code}
 
-The first step is to learn how to version your own code. In this tutorial, we will run Git from the command line of the Unix shell. Thus we expect readers are already comfortable with navigating a filesystem and running basic commands in such an environment. There are many graphical user interfaces (GUIs) available for running Git (Table 1), which we encourage you to explore, but learning to use Git on the command line is necessary for performing more advanced operations and using Git on a remote server. For the purposes of this tutorial, we'll imagine we have a subdirectory in our home directory named \verb|thesis|, which contains three files. \verb|process.sh| runs some common bioinformatics tools on our raw data, \verb|clean.py| removes bad samples and combines the data into a matrix, and \verb|analyze.R| runs a statistical test and plots the result.
+The first step is to learn how to version your own code.
+In this tutorial, we will run Git from the command line of the Unix shell.
+Thus we expect readers are already comfortable with navigating a filesystem and running basic commands in such an environment.
+There are many graphical user interfaces (GUIs) available for running Git (Table 1), which we encourage you to explore, but learning to use Git on the command line is necessary for performing more advanced operations and using Git on a remote server.
+For the purposes of this tutorial, we'll imagine we have a subdirectory in our home directory named \verb|thesis|, which contains three files.
+\verb|process.sh| runs some common bioinformatics tools on our raw data, \verb|clean.py| removes bad samples and combines the data into a matrix, and \verb|analyze.R| runs a statistical test and plots the result.
 
-To start versioning your code with Git, navigate to your newly created or existing project directory (in this case, \verb|~/thesis|).  Start tracking your code by running the command \verb|git init|, which \textit{init}iates a new Git repository.
+To start versioning your code with Git, navigate to your newly created or existing project directory (in this case, \verb|~/thesis|).
+Start tracking your code by running the command \verb|git init|, which \textit{init}iates a new Git repository.
 
 \begin{lstlisting}
 $ cd ~/thesis
@@ -12,7 +18,8 @@ $ git init
 Initialized empty Git repository in ~/thesis/.git/
 \end{lstlisting}
 
-Next you'll need to give Git some information about yourself, since it records who makes each change to the file(s). Provide your name and email by running the following lines, but replacing "First Last" and "user@domain" with your full name and email address, respectively.
+Next you'll need to give Git some information about yourself, since it records who makes each change to the file(s).
+Provide your name and email by running the following lines, but replacing "First Last" and "user@domain" with your full name and email address, respectively.
 
 \begin{lstlisting}
 $ git config --global user.name "First Last"
