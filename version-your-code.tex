@@ -3,7 +3,8 @@
 The first step is to learn how to version your own code.
 In this tutorial, we will run Git from the command line of the Unix shell.
 Thus we expect readers are already comfortable with navigating a filesystem and running basic commands in such an environment.
-There are many graphical user interfaces (GUIs) available for running Git (Table 1), which we encourage you to explore, but learning to use Git on the command line is necessary for performing more advanced operations and using Git on a remote server.
+You can find directions for installing Git for the operating system running on your computer by following one of the links provided in Table 1.
+There are many graphical user interfaces (GUIs) available for running Git (Table 1), which we encourage you to explore, but learning to use Git on the command line is necessary for performing more advanced operations and using Git on a remote machine.
 For the purposes of this tutorial, we'll imagine we have a subdirectory in our home directory named \verb|thesis|, which contains three files.
 \verb|process.sh| runs some common bioinformatics tools on our raw data, \verb|clean.py| removes bad samples and combines the data into a matrix, and \verb|analyze.R| runs a statistical test and plots the result.
 
@@ -28,9 +29,11 @@ $ git config --global user.email "user@domain"
 
 Now you're ready to start tracking your code.
 This requires a basic understanding of how Git tracks your files and the edits you make to them (Figure 1).
-Unsaved files and/or edits are in the working directory.
-This is similar to how you have worked before, i.e. edits to files in the working directory are  permanent and previous versions are not saved (unless you explicitly direct Git to do so).
-To follow what Git is doing as we save the initial version of our files, we'll use the informative command \verb|git status|.
+Conceptually, Git saves snapshots of the changes you make to your files whenever you instruct it to.
+For instance, after you edit a script in your text editor, you save the updated script to your thesis folder.
+If you tell Git to save a shapshot of the updated document, then you will have a permanent record of the file in that exact version even if you make subsequent edits to the file.
+In the Git framework, any changes you have made to a script, but have not yet recorded as a snapshot with Git, reside in the working diretory (Figure 1).
+To follow what Git is doing as we record the initial version of our files, we'll use the informative command \verb|git status|.
 
 \begin{lstlisting}
 $ git status
@@ -76,9 +79,9 @@ Untracked files:
         clean.py
 \end{lstlisting}
 
-Now the file \verb|process.sh| has been moved to the staging area, while both \verb|clean.py| and \verb|analyze.R| remain in the working directory.
+Now the file \verb|process.sh| has been added to the staging area, while both \verb|clean.py| and \verb|analyze.R| remain in the working directory.
 Adding a file to the staging area will result in the changes to that file being included in the next commit, or snapshot of the code (Figure 1).
-Since this will be the first commit, or version of the code, let's add the other two files as well.
+Since this will be the first commit, or version of the code, let's add the other two files to the staging area as well.
 Then we'll create the first commit using the command \verb|git commit|.
 
 \begin{lstlisting}
@@ -94,7 +97,11 @@ $ git commit -m "Add initial version of thesis code."
 Notice we used the flag \verb|-m| to pass a message for the commit.
 This message describes the changes that have been made to the code and is required.
 If you do not pass a message at the command line, you will be entered into the default text editor for your system, usually \verb|vi| or \verb|emacs|, to enter the message.
+We've just performed the typical development cycle with Git:
+make some changes, add them to the staging area, and commit the changes as a snapshot once we are satisfied with them.
+Now .
 
+Since Git records all of the commits, we can always look through the complete history of a project.
 To view the record of our commit, we use the command \verb|git log|.
 For each commit, it lists the identification (ID; note that in Git terminology it referred to as the SHA-1 checksum), author, date, and message.
 
@@ -107,7 +114,9 @@ Date:   Sun Mar 29 14:52:05 2015 -0500
     Add initial version of thesis code.
 \end{lstlisting}
 
-Now we are free to make changes to the files knowing that we can always revert them to the state of this commit.
+The commit ID can be used to compare two different versions of a file, restore a file to a previous version from a past commit, and even retrieve tracked files if you accidentally delete them.
+
+Now we are free to make changes to the files knowing that we can always revert them to the state of this commit by referencing its ID.
 As an example, we'll add the comment "\# Removes samples with more than 5\% missing data" to \verb|clean.py|.
 We can view all the changes made to the tracked files since the last commit by running the command \verb|git diff|.
 
@@ -142,3 +151,4 @@ There are also more advanced options for reverting history that we will not cove
 
 At this point, you have learned the commands needed to version your code with Git.
 Thus you already have the benefits of being able to make edits to files without copying them first, to create a record of your changes with accompanying messages, and to revert to previous versions of the files if needed.
+Now you will always be able recreate past results that were generated with previous versions of the code and see the exact changes you've made over the course of a project.
