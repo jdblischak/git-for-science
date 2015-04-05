@@ -1,7 +1,10 @@
 \subsection{Share your code}
 
 Once you have a directory of version controlled files, referred to as a repository, you can share it with your collaborators and the wider scientific community by putting your code online.
-This is made easier if you use one of the many online services that host Git repositories (Table 1), e.g. GitHub.
+This also has the added benefit of creating a backup of your work and provides a mechanism for syncing your files across multiple computers.
+A repository contains the version of the files from the last commit as well as all the versions from previous snapshots.
+Any files that have not been added to a commit are not included in the Git repository, even if they are located within the same directory on your local computer (see Box 3 for advice on the types of files that should not be versioned with Git).
+Sharing a repository is made easier if you use one of the many online services that host Git repositories (Table 1), e.g. GitHub.
 
 To begin using GitHub, you'll first need to sign up for an account.
 For the examples in this tutorial, we'll use the fake username "scientist123".
@@ -14,7 +17,7 @@ Thus we have just created a remote repository.
 Now we need to send the code on our computer to GitHub.
 The key to this is the URL that GitHub assigns your newly created remote repository.
 It will have the form \verb|https://github.com/username/reponame.git|, e.g. \verb|https://github.com/scientist123/thesis.git|.
-We'll tell Git about our remote repository using the command \verb|git remote add|.
+In order to link the local thesis repository on our computer to the remote repository we just created, we need to tell Git the URL of the remote repository using the command \verb|git remote add|.
 We use the alias name "origin" so that we don't have to type out the full URL in the future (this is the traditional name for a remote repository, but you could use another name if you liked).
 
 \begin{lstlisting}
@@ -32,7 +35,7 @@ Branches are parallel versions of the code, but we will not cover them in depth 
 As we have seen, we can already accomplish a lot when only using one branch.
 
 Pushing to GitHub also has the added benefit of backing up your code in case anything were to happen to your computer.
-Also, it can be used to sync your code across multiple machines, similar to a service like Dropbox, but with the added control of Git.
+Also, it can be used to sync your code across multiple machines, similar to a service like Dropbox, but with the added capabilities of Git.
 For example, let's say we wanted to work on our code on our computer at home.
 We can download the Git repository using the command \verb|git clone|.
 
@@ -42,14 +45,16 @@ $ git clone https://github.com/scientist123/thesis.git
 
 By default, this will download the Git repository into a local directory named "thesis".
 Furthermore, the remote "origin" will automatically be added so that you can easily push your changes back to GitHub.
+We now have copies of our repository on our work computer, our GitHub account online, and our personal computer.
+We can make changes, commit them on our home computer, and send those commits to the remote repository with \verb|git push|, just as we did on our work computer.
 
-Then the next day back at your work computer, you can update the code with the changes you made the previous evening using the command \verb|git pull|.
+Then the next day back at our work computer, we could update the code with the changes we made the previous evening using the command \verb|git pull|.
 
 \begin{lstlisting}
 $ git pull origin master
 \end{lstlisting}
 
-This pulls in all the commits that you had previously pushed to the GitHub remote repository.
+This pulls in all the commits that we had previously pushed to the GitHub remote repository from our home computer.
 In this workflow, you are essentially collaborating with yourself as you work from multiple computers.
 If you are working on a project with just one or two other collaborators, you could extend this workflow so that they could edit the code in the same way.
 You can do this by adding them as Collaborators on your repository (Settings -> Collaborators -> Add collaborator).
