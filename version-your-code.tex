@@ -17,7 +17,7 @@ $ git config --global user.email "user@domain"
 \end{lstlisting}
 
 To start versioning your code with Git, navigate to your newly created or existing project directory (in this case, \verb|~/thesis|).
-Start tracking your code by running the command \verb|git init|, which \textit{init}iates a new Git repository.
+Start tracking your code by running the command \verb|git init|, which \textit{init}iates a new Git repository in the current folder.
 
 \begin{lstlisting}
 $ cd ~/thesis
@@ -27,13 +27,13 @@ $ git init
 Initialized empty Git repository in ~/thesis/.git/
 \end{lstlisting}
 
-Now you're ready to start tracking your code.
+Now you are ready to start tracking your code.
 This requires a basic understanding of how Git tracks your files and the edits you make to them (Figure 1).
 Conceptually, Git saves snapshots of the changes you make to your files whenever you instruct it to.
 For instance, after you edit a script in your text editor, you save the updated script to your thesis folder.
 If you tell Git to save a shapshot of the updated document, then you will have a permanent record of the file in that exact version even if you make subsequent edits to the file.
 In the Git framework, any changes you have made to a script, but have not yet recorded as a snapshot with Git, reside in the working diretory (Figure 1).
-To follow what Git is doing as we record the initial version of our files, we'll use the informative command \verb|git status|.
+To follow what Git is doing as we record the initial version of our files, we will use the informative command \verb|git status|.
 
 \begin{lstlisting}
 $ git status
@@ -52,7 +52,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 \end{lstlisting}
 
 There are a few key things to notice from this output.
-First, notice that the three scripts are recognized as untracked files because we have not saved anything yet.
+First, notice that the three scripts are recognized as untracked files because we have not told git to take snapshots of anything yet.
 Second, notice the use of the word "commit", which is an essential Git term (Box 1).
 When used as a verb, it means "to save", e.g. "to commit a change."
 When used as a noun, it means "a version of the code", e.g. "the figure was generated using the commit from yesterday."
@@ -79,10 +79,10 @@ Untracked files:
         clean.py
 \end{lstlisting}
 
-Now the file \verb|process.sh| has been added to the staging area, while both \verb|clean.py| and \verb|analyze.R| remain in the working directory.
+Now the file \verb|process.sh| has been added to the staging area, while both \verb|clean.py| and \verb|analyze.R| remain unstaged.
 Adding a file to the staging area will result in the changes to that file being included in the next commit, or snapshot of the code (Figure 1).
-Since this will be the first commit, or version of the code, let's add the other two files to the staging area as well.
-Then we'll create the first commit using the command \verb|git commit|.
+Since this will be the first commit, or first version of the code, let us add the other two files to the staging area as well.
+Then we will create the first commit using the command \verb|git commit|.
 
 \begin{lstlisting}
 $ git add clean.py analyze.R
@@ -97,13 +97,12 @@ $ git commit -m "Add initial version of thesis code."
 Notice we used the flag \verb|-m| to pass a message for the commit.
 This message describes the changes that have been made to the code and is required.
 If you do not pass a message at the command line, you will be entered into the default text editor for your system, usually \verb|vi| or \verb|emacs|, to enter the message.
-We've just performed the typical development cycle with Git:
-make some changes, add them to the staging area, and commit the changes as a snapshot once we are satisfied with them.
-Now .
+We have just performed the typical development cycle with Git:
+make some changes, add updated files to the staging area, and commit the changes as a snapshot once we are satisfied with them.
 
 Since Git records all of the commits, we can always look through the complete history of a project.
-To view the record of our commit, we use the command \verb|git log|.
-For each commit, it lists the identification (ID; note that in Git terminology it referred to as the SHA-1 checksum), author, date, and message.
+To view the record of our commits, we use the command \verb|git log|.
+For each commit, it lists the identification (ID; note that in Git terminology it referred to as the SHA-1 checksum), author, date, and commit message.
 
 \begin{lstlisting}
 $ git log
@@ -118,7 +117,7 @@ The commit ID can be used to compare two different versions of a file, restore a
 
 Now we are free to make changes to the files knowing that we can always revert them to the state of this commit by referencing its ID.
 As an example, we'll add the comment "\# Removes samples with more than 5\% missing data" to \verb|clean.py|.
-We can view all the changes made to the tracked files since the last commit by running the command \verb|git diff|.
+We can view all the \textit{diff}erences between the current version and last committed version of the file by running the command \verb|git diff|.
 
 \begin{lstlisting}
 $ git diff
@@ -131,8 +130,8 @@ index e69de29..5a3e47a 100644
 \end{lstlisting}
 
 As expected, this shows us the one line that we added to \verb|clean.py|.
-If we wanted to save this edit, we could add it to the staging area using \verb|git add| and then commit the change using \verb|git commit|, as we did above.
-Instead, this time we'll restore the previous version of the file using the command \verb|git checkout|.
+If we wanted to save this edit, we could add \verb|clean.py| to the staging area using \verb|git add| and then commit the change using \verb|git commit|, as we did above.
+Instead, this time we will restore the last committed version of the file using the command \verb|git checkout|.
 
 \begin{lstlisting}
 $ git checkout -- clean.py
@@ -151,4 +150,4 @@ There are also more advanced options for reverting history that we will not cove
 
 At this point, you have learned the commands needed to version your code with Git.
 Thus you already have the benefits of being able to make edits to files without copying them first, to create a record of your changes with accompanying messages, and to revert to previous versions of the files if needed.
-Now you will always be able recreate past results that were generated with previous versions of the code and see the exact changes you've made over the course of a project.
+Now you will always be able recreate past results that were generated with previous versions of the code and see the exact changes you have made over the course of a project.
