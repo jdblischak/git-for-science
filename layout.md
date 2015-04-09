@@ -10,5 +10,5 @@ box-2-branching.tex
 box-3-what-not-to-version-control.tex
 figures/figure_1-01/figure_1_v3.png
 figures/figure_2_v2-01/figure_2_v3.png
-figures/figure_3_v2-01/figure_3_v3.png
 figures/figure_3_v4/figure_3_v4.png
+figures/figure_3_v2-01/figure_3_v3.png
