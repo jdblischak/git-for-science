@@ -2,7 +2,7 @@
 
 Many scientists write code as part of their research.
 Just as experiments are logged in laboratory notebooks, it is important to document the code you use for analysis.
-A few key problems arise when iteratively developing code.
+However, a few key problems can arise when iteratively developing code that make it difficult to document and track which code was used to create each result.
 First, you often need to experiment with new ideas, such as adding new features to a script or increasing the speed of a slow step, but you do not want to risk breaking the currently working code.
 The simplest solution is to make a copy the script before making new edits.
 However, this can quickly become a problem because it clutters your filesystem with uniformative filenames, e.g. \verb|analysis.sh|, \verb|analysis_02.sh|, \verb|analysis_03.sh|, etc.
@@ -12,14 +12,14 @@ If you email the code to multiple people, you will have to manually incorporate 
 
 Fortunately, software engineers have already developed software to manage these issues: version control. 
 Version control software allows you to track the iterative changes you make to your code.
-Thus you can experiment with new ideas but always have the option to revert to a specific past version of the code.
+Thus you can experiment with new ideas but always have the option to revert to a specific past version of the code you used to generate particular results.
 Furthermore, you can record messages as you save each successive version so that you (or anyone else) reviewing the development history of the code is able to understand the rationale for the given edits.
 Also, it facilitates collaboration.
 Using version control software, your collaborators can make and save changes to the code, and you can automatically incorporate these changes to the main code base.
 The collaborative aspect is enhanced with the emergence of websites that host version controlled code.
 
 In this quick guide, we introduce you to one version control system (VCS), Git (\href{http://git-scm.com/}{git-scm.com}), and one online hosting site, GitHub (\href{https://github.com}{github.com}), both of which are currently popular among scientists and programmers in general.
-More importantly, we hope to convince you that although adopting all the functionality of a given VCS has a steep learning curve, you can already achieve great benefits by getting started using a few simple commands.
+More importantly, we hope to convince you that although mastering a given VCS takes time, you can already achieve great benefits by getting started using a few simple commands.
 Furthermore, not only does using a VCS solve many common problems when writing code, it can also improve the scientific process.
 By tracking your code development with a VCS and hosting it online, you are performing science that is more transparent, reproducible, and open to collaboration \cite{23448176}.
 There is no reason this framework needs to be limited only to code; a VCS is well-suited for tracking any plain-text files: manuscripts, electronic lab notebooks, protocols, etc.
