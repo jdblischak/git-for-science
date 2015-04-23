@@ -69,3 +69,109 @@ Thanks for the suggestions, Francis.
 * On having good examples of GitHub repos. That is a great idea!
 
 * On pros and cons of other tools. I’d prefer to stay away from this issue because the reasons for a tools popularity is not always because it is objectively better. Often the best tool to learn is the one that your colleagues are using. Git and GitHub currently have the strongest foothold in terms of number of users, but the benefits of version control we’ll describe in this tutorial equally apply to other distributed version control setups, e.g. using Mercurial and hosting with Bitbucket.
+
+## Greg's comments on section version-your-code.tex
+
+
+Greg Wilson 13 days ago · Public 
+
+    There are many graphical user interfaces (GUIs) available for running Git (Table 1), which we encourage you to explore, but learning to use Git on the command line is necessary for performing more advanced operations and using Git on a remote machine. 
+
+Callout box?
+Greg Wilson 13 days ago · Public 
+
+    or the purpose 
+
+start new paragraph
+Greg Wilson 13 days ago · Public 
+
+    initiates 
+
+initializes, not initiates, and the partial italics are hard to read
+Greg Wilson 13 days ago · Public 
+
+    This requires a basic understanding of how Git tracks your files and the edits you make to them 
+
+Delete - nobody would think you could use Git without understanding it.
+Greg Wilson 13 days ago · Public 
+
+    notice 
+
+used ’notice’ in preceding sentence
+Greg Wilson 13 days ago · Public 
+
+    which is an essential Git term 
+
+remove
+Greg Wilson 13 days ago · Public 
+
+    $ git add process.sh $ git status 
+
+Put git add and git status in separate boxes to make it clearer that there are two separate commands here (people won’t see them otherwise).
+Greg Wilson 13 days ago · Public 
+
+    staging area 
+
+analogy: putting stuff in the staging area is like putting things in a box to mail off; committing is like putting the box in the mail.
+Greg Wilson 13 days ago · Public 
+
+    you will be entered into 
+
+awkward
+Greg Wilson 13 days ago · Public 
+
+    , usually vi or emacs, 
+
+remove
+Greg Wilson 13 days ago · Public 
+
+    identification (ID; note that in Git terminology it referred to as the SHA-1 checksum) 
+
+the unique identifier for that revision [no need to talk about checksums]
+Greg Wilson 13 days ago · Public 
+
+    “# Removes samples with more than 5% missing data” 
+
+difficult to parse inline - can you instead show a few made-up lines of code with the change highlighted?
+Greg Wilson 13 days ago · Public 
+
+    running the command git diff. 
+
+difficult to understand the diff if we haven’t seen the code before and after.
+Greg Wilson 13 days ago · Public 
+
+diff output is really confusing - can you show a screenshot of a two-pane diff viewer like WinDiff or DiffMerge as well?
+Greg Wilson 13 days ago · Public 
+
+    As expected, 
+
+Most of the output of ’git diff’ is *NOT* expected - the index line, the @@ lines, etc. are really confusing.
+Greg Wilson 13 days ago · Public 
+
+    -- clean.py 
+
+need to explain the double dash.
+Greg Wilson 13 days ago · Public 
+
+    660213b91af167d992885e45ab19f585f02d4661 
+
+whoa - tell them that they only need the first few digits, please :-)
+
+## Greg's comments on share-your-code.tex
+
+
+Greg Wilson 13 days ago · Public 
+
+    referred to as a repository 
+
+hadn’t noticed that ’repository’ wasn’t introduced earlier - should be...
+Greg Wilson 13 days ago · Public 
+
+    alias 
+
+1. Tell people that a remote is just a bookmark. 2. Don’t introduce yet another term (alias) for the same idea.
+Greg Wilson 13 days ago · Public 
+
+    , followed by the name of the branch name “master”. Branches are parallel versions of the code, but we will not cover them in depth in this tutorial (Box 2). 
+
+The word “master” tells Git that we’re pushing the master copy of the repository - we won’t go into other options in this tutorial, but Box 2 discusses them briefly. [i.e., let’s avoid talking about branches unless we’re actually going to talk about branches]
