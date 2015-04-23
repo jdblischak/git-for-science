@@ -1,0 +1,71 @@
+
+Greg Wilson about 1 month ago · Public 
+
+    Explain basic idea of version control software 
+
+Emphasize that it solves two problems at once: managing multi-author collaboration and managing old versions of files.
+Greg Wilson about 1 month ago · Public 
+
+    (as a single contributor) 
+
+This is the “managing files” half of what VCS does (emphasize that it’s not just for code, and not just for groups).
+Greg Wilson about 1 month ago · Public 
+
+    previous versions 
+
+I’d add “how to compare to old versions” here before “how to revert” - seeing what you’ve changed (particularly in analysis scripts) is a frequent use case.
+Greg Wilson about 1 month ago · Public 
+
+    Using version control online 
+
+Because keeping history on your working machine (e.g., your laptop) is just asking for trouble - single point of failure.
+Greg Wilson about 1 month ago · Public 
+
+    collaborators 
+
+Including yourself on your other machine(s) or when you’re traveling or...
+Greg Wilson about 1 month ago · Public 
+
+Pretty sure Figure 2 is going to scare people, but building up to it in a series of ever-more-complex diagrams might help.
+Greg Wilson about 1 month ago · Public 
+
+Another box: what is version control *not* good for? (Answer: big data files that never change, binary files (including Word and Excel))
+John Blischak about 1 month ago · Public   
+
+Thanks for the feedback, Greg. I’ve incorporated many of your suggestions into the outline. The other suggestions we can incorporate when writing the actual text for each of the sections.
+Francis Ouellette about 1 month ago · Public 
+
+    Introduction to version control 
+
+Maybe add: who uses it, why they use it, and added benefits, makes it easy to share code, makes it easier for people to contribute code to a project. About Openess, and how it is useful of the reproducibility of science
+Francis Ouellette about 1 month ago · Public 
+
+    Introduction to version control 
+
+Also want to introduce difference between git and github (I know it’s simple, but many will need some hand holding).
+Francis Ouellette about 1 month ago · Public 
+
+    Potential box (or table) ideas 
+
+Maybe some example (link to) of very simple, well known git repo? So people can see what it looks like in real?
+Francis Ouellette about 1 month ago · Public 
+
+    Other version control systems and hosting sites 
+
+Would you add pro and cons to these?
+Francis Ouellette about 1 month ago · Public 
+
+    What not to version control? Large, static data files; binary files like Word 
+
+yes, good idea!
+John Blischak about 1 month ago · Public   
+
+Thanks for the suggestions, Francis.
+
+* On the added benefits of using Git, I was planning on addressing your suggestions in the section “Why is it so powerful?”
+
+* On the difference between Git and GitHub. While this will likely receive a short blurb in the intro, I was planning on making that distinction clear during the transition from section 2 (using Git to track your code) to section 3 (hosting your code on GitHub).
+
+* On having good examples of GitHub repos. That is a great idea!
+
+* On pros and cons of other tools. I’d prefer to stay away from this issue because the reasons for a tools popularity is not always because it is objectively better. Often the best tool to learn is the one that your colleagues are using. Git and GitHub currently have the strongest foothold in terms of number of users, but the benefits of version control we’ll describe in this tutorial equally apply to other distributed version control setups, e.g. using Mercurial and hosting with Bitbucket.
