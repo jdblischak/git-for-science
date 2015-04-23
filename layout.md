@@ -1,4 +1,3 @@
-Outline.tex
 introduction.tex
 version-your-code.tex
 share-your-code.tex
