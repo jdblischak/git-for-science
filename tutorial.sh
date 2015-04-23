@@ -1,7 +1,18 @@
 # Setup
 mkdir thesis
 cd thesis
-touch process.sh clean.py analyze.R
+touch process.sh analyze.R
+echo '#!/usr/bin/env python
+
+# Thesis project:
+# Remove bad samples.
+# Export clean data as a matrix.
+
+# Usage: clean.py input [input ...] > data_clean.py
+
+import sys
+import os
+' > clean.py
 # Version your code
 git init
 git config user.name "First Last"
@@ -12,8 +23,11 @@ git status
 git add clean.py analyze.R
 git commit -m "Add initial version of thesis code."
 git log
-echo "# Removes samples with more than 5% missing data" > clean.py
+# Change description in clean.py
+# +# Remove samples with more than 5% missing data.
+# -# Remove bad samples.
+nano clean.py
 git diff
 git checkout -- clean.py
 git diff
-git checkout 660213b91af167d992885e45ab19f585f02d4661 clean.py
+git checkout 660213b clean.py

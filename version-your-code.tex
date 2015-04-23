@@ -122,20 +122,59 @@ Date:   Sun Mar 29 14:52:05 2015 -0500
 The commit identifier can be used to compare two different versions of a file, restore a file to a previous version from a past commit, and even retrieve tracked files if you accidentally delete them.
 
 Now we are free to make changes to the files knowing that we can always revert them to the state of this commit by referencing its identifier.
-As an example, we'll add the comment "\# Removes samples with more than 5\% missing data" to \verb|clean.py|.
+As an example, we'll edit \verb|clean.py|.
+Here is the current top of the file.
+
+\begin{lstlisting}
+$ head clean.py
+#!/usr/bin/env python
+
+# Thesis project:
+# Remove bad samples.
+# Export clean data as a matrix.
+
+# Usage: clean.py input [input ...] > data_clean.py
+
+import sys
+import os
+\end{lstlisting}
+
+We'll update the description to explicitly define which samples are removed.
+
+\begin{lstlisting}
+$ head clean.py
+#!/usr/bin/env python
+
+# Thesis project:
+# Remove samples with more than 5% missing data.
+# Export clean data as a matrix.
+
+# Usage: clean.py input [input ...] > data_clean.py
+
+import sys
+import os
+\end{lstlisting}
+
 We can view all the differences between the current version and last committed version of the file by running the command \verb|git diff|.
 
 \begin{lstlisting}
 $ git diff
 diff --git a/clean.py b/clean.py
-index e69de29..5a3e47a 100644
+index c1fcad7..c0bfe5c 100644
 --- a/clean.py
 +++ b/clean.py
-@@ -0,0 +1 @@
-+# Removes samples with more than 5% missing data
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env python
+ 
+ # Thesis project:
+-# Remove bad samples.
++# Remove samples with more than 5% missing data.
+ # Export clean data as a matrix.
+ 
+ # Usage: clean.py input [input ...] > data_clean.py
 \end{lstlisting}
 
-This shows us the one line that we added to \verb|clean.py|.
+The new line starts with \verb|+| and the previous line starts with \verb|-|.
 We can ignore the first five lines of output because they are directions for other software programs that can merge changes to files.
 If we wanted to save this edit, we could add \verb|clean.py| to the staging area using \verb|git add| and then commit the change using \verb|git commit|, as we did above.
 Instead, this time we will restore the last committed version of the file using the command \verb|git checkout|.
