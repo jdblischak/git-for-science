@@ -9,8 +9,8 @@ There are many graphical user interfaces (GUIs) available for running Git (Table
 For the purposes of this tutorial, we'll imagine we have a folder in our home directory named \verb|thesis|, which contains three files.
 \verb|process.sh| runs some common bioinformatics tools on our raw data, \verb|clean.py| removes bad samples and combines the data into a matrix, and \verb|analyze.R| runs a statistical test and plots the result.
 
-If you have just installed Git, the first thing you need to do is give Git some information about yourself, since it records who makes each change to the file(s).
-Provide your name and email by running the following lines, but replacing "First Last" and "user@domain" with your full name and email address, respectively.
+If you have just installed Git, the first thing you need to do is provide some information about yourself, since it records who makes each change to the file(s).
+Set your name and email by running the following lines, but replacing "First Last" and "user@domain" with your full name and email address, respectively.
 
 \begin{lstlisting}
 $ git config --global user.name "First Last"
@@ -88,7 +88,7 @@ Now the file \verb|process.sh| has been added to the staging area, while both \v
 Adding a file to the staging area will result in the changes to that file being included in the next commit, or snapshot of the code (Figure 1).
 As an analogy, adding files to the staging area is like putting things in a box to mail off, and committing is like putting the box in the mail.
 
-Since this will be the first commit, or first version of the code, let us add the other two files to the staging area as well.
+Since this will be the first commit, or first version of the code, let's add the other two files to the staging area as well.
 Then we will create the first commit using the command \verb|git commit|.
 
 \begin{lstlisting}
