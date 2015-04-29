@@ -3,6 +3,7 @@ version-your-code.tex
 share-your-code.tex
 contribute-to-other-projects.tex
 conclusion.tex
+methods.tex
 box-1-definitions.tex
 table-1-resources.tex
 box-2-branching.tex
