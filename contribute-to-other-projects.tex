@@ -9,14 +9,14 @@ Instead you will first need to create your own remote copy of the repository, ca
 You can fork any repository on GitHub by clicking the button "Fork" on the top right of the screen.
 
 Once you have a fork of a project's repository, you can clone it to your computer and make changes just like a repository you created yourself.
-Let's say we created a fork of the hypothetical repository, "cool\_project", so that we could fix a typo we found in the directions in the README file.
-In order to make changes, we first download it with \verb|git clone|.
+Let's say you created a fork of the hypothetical repository, "cool\_project", so that you could fix a typo you found in the directions in the README file.
+In order to make changes, you first download it with \verb|git clone|.
 
 \begin{lstlisting}
 $ git clone https://github.com/scientist123/cool_project.git
 \end{lstlisting}
 
-After making the edits we want, we can add, commit, and push the changes back to our remote repository on GitHub (Figure 3).
+After making the edits you want, you can add, commit, and push the changes back to your remote repository on GitHub (Figure 3).
 
 \begin{lstlisting}
 $ git add README
@@ -24,9 +24,9 @@ $ git commit -m "Fix typo in documentation."
 $ git push origin master
 \end{lstlisting}
 
-Currently the typo is fixed in our fork of cool\_project.
-To merge this change into the main repository that is owned by the creator of the software, we send a pull request using the GitHub interface (Pull request -\textgreater New pull request -\textgreater Create pull request).
-After the pull request is created, the owner of the original repository can review our change.
+Currently the typo is fixed in your fork of cool\_project.
+To merge this change into the main repository that is owned by the creator of the software, send a pull request using the GitHub interface (Pull request -\textgreater New pull request -\textgreater Create pull request).
+After the pull request is created, the owner of the original repository can review your change.
 If she approves of the change, she can merge it into the main repository.
 Although this process of forking a project’s repository and issuing a pull request seems like a lot of work to contribute changes, this workflow gives the owner of the project control over what changes get incorporated into the code. You can have others contribute to your projects using the same workflow (S1 Figure). 
 

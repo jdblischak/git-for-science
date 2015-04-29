@@ -7,35 +7,35 @@ Note, however, that any files that have not been tracked with at least one commi
 
 To begin using GitHub, you will first need to sign up for an account.
 For the examples in this tutorial, we will use the fake username "scientist123".
-Next you will need to choose the option to "Create a new repository".
-We will call it "thesis" because that is the directory name containing the files, but this is not a requirement.
-Also, now that the code will be existing in multiple places, we need to learn some more terminology (Box 1).
+Next choose the option to "Create a new repository".
+Call it "thesis" because that is the directory name containing the files, but this is not a requirement.
+Also, now that the code will be existing in multiple places, you need to learn some more terminology (Box 1).
 A local repository refers to code that is stored on the machine you are using, e.g. your laptop; whereas, a remote repository refers to the code that is hosted online.
-Thus, we have just created a remote repository.
+Thus, you have just created a remote repository.
 
-Now we need to send the code on our computer to GitHub.
+Now you need to send the code on your computer to GitHub.
 The key to this is the URL that GitHub assigns your newly created remote repository.
 It will have the form \verb|https://github.com/username/reponame.git|, e.g. \verb|https://github.com/scientist123/thesis.git|.
-In order to link the local thesis repository on our computer to the remote repository we just created, in our local repository we need to tell Git the URL of the remote repository using the command \verb|git remote add|.
-We use the alias name "origin" so that we do not have to type out the full URL in the future (this is the default name for a remote repository, but you could use another name if you liked).
+In order to link the local thesis repository on your computer to the remote repository you just created, in your local repository you need to tell Git the URL of the remote repository using the command \verb|git remote add|.
+Use the alias name "origin" so that you do not have to type out the full URL in the future (this is the default name for a remote repository, but you could use another name if you liked).
 
 \begin{lstlisting}
 $ git remote add origin https://github.com/scientist123/thesis.git
 \end{lstlisting}
 
-We send our code to GitHub using the command \verb|git push| (Figure 2).
+Send your code to GitHub using the command \verb|git push| (Figure 2).
 
 \begin{lstlisting}
 $ git push origin master
 \end{lstlisting}
 
-We first specify the remote repository, "origin".
-Second, we tell Git to push to the "master" copy of the repository - we won’t go into other options in this tutorial, but Box 2 discusses them briefly.
+You first specify the remote repository, "origin".
+Second, you tell Git to push to the "master" copy of the repository - we won’t go into other options in this tutorial, but Box 2 discusses them briefly.
 
 Pushing to GitHub also has the added benefit of backing up your code in case anything were to happen to your computer.
 Also, it can be used to sync your code across multiple machines, similar to a service like Dropbox, but with the added capabilities of Git.
-For example, let's say we wanted to work on our code on our computer at home.
-We can download the Git repository using the command \verb|git clone|.
+For example, what if you wanted to work on your code on your computer at home?
+You can download the Git repository using the command \verb|git clone|.
 
 \begin{lstlisting}
 $ git clone https://github.com/scientist123/thesis.git
@@ -43,16 +43,16 @@ $ git clone https://github.com/scientist123/thesis.git
 
 By default, this will download the Git repository into a local directory named "thesis".
 Furthermore, the remote "origin" will automatically be added so that you can easily push your changes back to GitHub.
-We now have copies of our repository on our work computer, our GitHub account online, and our personal computer.
-We can make changes, commit them on our home computer, and send those commits to the remote repository with \verb|git push|, just as we did on our work computer.
+You now have copies of your repository on your work computer, your GitHub account online, and your personal computer.
+You can make changes, commit them on your home computer, and send those commits to the remote repository with \verb|git push|, just as you did on your work computer.
 
-Then the next day back at our work computer, we could update the code with the changes we made the previous evening using the command \verb|git pull|.
+Then the next day back at your work computer, you could update the code with the changes you made the previous evening using the command \verb|git pull|.
 
 \begin{lstlisting}
 $ git pull origin master
 \end{lstlisting}
 
-This pulls in all the commits that we had previously pushed to the GitHub remote repository from our home computer.
+This pulls in all the commits that you had previously pushed to the GitHub remote repository from your home computer.
 In this workflow, you are essentially collaborating with yourself as you work from multiple computers.
 If you are working on a project with just one or two other collaborators, you could extend this workflow so that they could edit the code in the same way.
 You can do this by adding them as Collaborators on your repository (Settings -\textgreater Collaborators -\textgreater Add collaborator).
