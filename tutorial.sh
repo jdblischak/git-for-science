@@ -1,7 +1,12 @@
 # Setup
 mkdir thesis
 cd thesis
-touch process.sh analyze.R
+echo '#!/bin/bash
+
+# Pre-process the data
+
+tool -f $1 > output.txt
+' > process.sh
 echo '#!/usr/bin/env python
 
 # Thesis project:
@@ -13,6 +18,14 @@ echo '#!/usr/bin/env python
 import sys
 import os
 ' > clean.py
+echo '#!/usr/bin/Rscript
+
+# Run stats.
+# Plot the results.
+
+dat <- read.table("data-clean.txt")
+str(dat)
+' > analyze.R
 # Version your code
 git init
 git config user.name "First Last"
