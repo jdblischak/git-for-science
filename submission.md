@@ -2,8 +2,6 @@ Article Type: Education
 
 Title - A quick introduction to version control with Git and GitHub
 
-Short Title - Introduction to version control
-
 Abstract: NA
 
 Many Education articles do not have an abstract, e.g. [Bassi 2007][bassi2007] and [Brazas et al. 2014][brazas2014].
