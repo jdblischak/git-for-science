@@ -1,0 +1,22 @@
+\subsection{Box 5: Managing large files}
+
+Many biological applications require handling large data files.
+While Git is best-suited for collaboratively writing small text files, nonetheless collaboratively working on projects in the biological sciences necesitates managing this data.
+
+The example analysis pipeline in this tutorial starts by downloading bam files which contains the aligments of short reads from a ChIP-seq experiment to the human genome.
+Since these large, binary files are not going to change, there is no reason to version them with Git.
+Thus hosting them on a remote http (as ENCODE has done in this case) or ftp site allows each collaborator to download it to her machine as needed, e.g. using \verb|wget|, \verb|curl|, or \verb|rsync|.
+If the data files for your project are smaller, you could also share them via services like Dropbox or Google Drive.
+
+However, some intermediate data files may change over time, and the practical necesity to ensure all collaborators are using the same data set may override the advice to \textit{not} put code output under version control, as described in Box 3.
+Again returning to the ChIP-seq example, the first step calling the peaks is the most difficult computationally because it requires access to a Unix-like environment and sufficient comptational resources.
+Thus for collaborators that want to experiment with \verb|clean.py| and \verb|analyze.R| without having to run \verb|process.sh|, you could version the bed files containing the ChIP-seq peaks.
+But since these files are larger than that typically used with Git, you can instead use one of the solutions for versioning large files within a Git repository without actually saving the file with Git, e.g. git-annex (\href{https://git-annex.branchable.com/}{git-annex.branchable.com}) or git-fat (\href{https://github.com/jedbrown/git-fat/}{github.com/jedbrown/git-fat}).
+Recently GitHub has created their own solution for managing large files called Git Large File Storage (LFS) (\href{https://git-lfs.github.com/}{git-lfs.github.com}).
+Instead of committing the entire large file to Git, which quickly becomes unmanageable, it commits a text pointer.
+This text pointer refers to a specific file saved on a remote GitHub server.
+Thus when you clone a repository, it only downloads the latest version of the large file.
+And if you checkout an older version of the repository, it automatically downloads the old version of the large file from the remote server.
+After installing Git LFS, you can manage all the bed files with one command \verb|git lfs track "*.bed"|.
+Then you can commit the bed files just like your scripts, and they will automatically be handled with Git LFS.
+Now if you were to change the parameters of the peak calling algorithm and re-run \verb|process.sh|, you could commit the updated bed files and your collaborators could pull the new versions of the files directly to their local Git repositories.

@@ -9,6 +9,7 @@ table-1-resources.tex
 box-2-branching.tex
 box-3-what-not-to-version-control.tex
 box-4-licensing.tex
+box-5-managing-large-files.tex
 figures/figure-legends.tex
 figures/Fig1/Fig1.png
 figures/Fig2/Fig2.png
