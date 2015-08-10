@@ -164,7 +164,7 @@ union = combined.filter(lambda x: int(x[3]) == 3).saveas()
 union.cut(range(3)).saveas(data + "/sites-union.bed")
 \end{lstlisting}
 
-You can view all the differences between the current version and last committed version of the file by running the command \verb|git diff|.
+You can view all the unstaged differences between the current version and last committed version of the file by running the command \verb|git diff|.
 
 \begin{lstlisting}
 $ git diff
@@ -207,5 +207,6 @@ There are also more advanced options for reverting history that we will not cove
 At this point, you have learned the commands needed to version your code with Git.
 Thus you already have the benefits of being able to make edits to files without copying them first, to create a record of your changes with accompanying messages, and to revert to previous versions of the files if needed.
 Now you will always be able to recreate past results that were generated with previous versions of the code and see the exact changes you have made over the course of a project.
+  
   
   
