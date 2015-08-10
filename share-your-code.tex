@@ -6,7 +6,7 @@ Sharing a repository is made easier if you use one of the many online services t
 Note, however, that any files that have not been tracked with at least one commit are not included in the Git repository, even if they are located within the same directory on your local computer (see Box 3 for advice on the types of files that should not be versioned with Git and Box 5 for advice on managing large files).
 
 To begin using GitHub, you will first need to sign up for an account.
-For the examples in this tutorial, we will use the fake username "scientist123".
+For the code examples in this tutorial, you will need to replace \verb|username| with the username of your account.
 Next choose the option to "Create a new repository".
 Call it "thesis" because that is the directory name containing the files, but this is not a requirement.
 Also, now that the code will be existing in multiple places, you need to learn some more terminology (Box 1).
@@ -15,11 +15,11 @@ Thus, you have just created a remote repository.
 
 Now you need to send the code on your computer to GitHub.
 The key to this is the URL that GitHub assigns your newly created remote repository.
-It will have the form \verb|https://github.com/username/reponame.git|, e.g. \verb|https://github.com/scientist123/thesis.git|.
+It will have the form \verb|https://github.com/username/thesis.git|.
 In order to link the local thesis repository on your computer to the remote repository you just created, in your local repository you need to tell Git the URL of the remote repository using the command \verb|git remote add|.
 
 \begin{lstlisting}
-$ git remote add origin https://github.com/scientist123/thesis.git
+$ git remote add origin https://github.com/username/thesis.git
 \end{lstlisting}
 
 The name "origin" is a bookmark for the remote repository so that you do not have to type out the full URL every time you sync your changes (this is the default name for a remote repository, but you could use another name if you liked).
@@ -39,7 +39,7 @@ For example, what if you wanted to work on your code on your computer at home?
 You can download the Git repository using the command \verb|git clone|.
 
 \begin{lstlisting}
-$ git clone https://github.com/scientist123/thesis.git
+$ git clone https://github.com/username/thesis.git
 \end{lstlisting}
 
 By default, this will download the Git repository into a local directory named "thesis".
