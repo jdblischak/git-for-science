@@ -5,13 +5,13 @@ Now that you know the basics of Git, you can directly contribute to developing t
 From a small contribution like fixing a typo in the documentation to a larger change such as fixing a bug, it is empowering to be able to improve the software used by you and many other scientists.
 
 When contributing to a larger project with many contributors, you will not be able to push your changes with \verb|git push| directly to the project's remote repository.
-Instead you will first need to create your own remote copy of the repository, called a fork (Box 1).
+Instead you will first need to create your own remote copy of the repository, which is called a fork by GitHub (Box 1).
 You can fork any repository on GitHub by clicking the button "Fork" on the top right of the page.
 
 Once you have a fork of a project's repository, you can clone it to your computer and make changes just like a repository you created yourself.
-As an exercise, you'll add a file to the repository that we used to write this paper.
+As an exercise, you will add a file to the repository that we used to write this paper.
 First, go to \href{https://github.com/jdblischak/git-for-science}{github.com/jdblischak/git-for-science} and choose the "Fork" option to create a git-for-science repository under your GitHub account.
-In order to make changes, first download it with \verb|git clone|.
+In order to make changes, download it to your computer with the command \verb|git clone| from the directory you wish the repo to appear in.
 
 \begin{lstlisting}
 $ git clone https://github.com/username/git-for-science.git
@@ -32,10 +32,12 @@ $ git commit -m "Add username to directory of readers."
 $ git push origin master
 \end{lstlisting}
 
-Currently the new file you created, \verb|readers/username.txt|, only exists in your fork of git-for-science.
+Currently, the new file you created, \verb|readers/username.txt|, only exists in your fork of git-for-science.
 To merge this file into the main repository, send a pull request using the GitHub interface (Pull request -\textgreater New pull request -\textgreater Create pull request).
 After the pull request is created, we can review your change and then merge it into the main repository.
 Although this process of forking a project’s repository and issuing a pull request seems like a lot of work to contribute changes, this workflow gives the owner of a project control over what changes get incorporated into the code.
 You can have others contribute to your projects using the same workflow. 
 
 The ability to use Git to contribute changes is very powerful because it allows you to improve the software that is used by many other scientists and also potentially shape the future direction of its development.
+
+  
