@@ -1,5 +1,6 @@
 \usepackage{listings}
 \usepackage{color}
+\usepackage{textcomp}
 
 \definecolor{mygray}{rgb}{0.74,0.74,0.74}
 
@@ -9,5 +10,6 @@
   breaklines=true,                 % automatic line breaking only at whitespace
   captionpos=b,                    % sets the caption-position to bottom
   showstringspaces=false,          % do not underline spaces within strings
-  frame=single                     % put a frame around code block
+  frame=single,                    % put a frame around code block
+  literate={"}{\textquotestraightdblbase}1 % Hopefully use non-curly quotation marks
 }
