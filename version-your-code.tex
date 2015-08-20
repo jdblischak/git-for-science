@@ -14,7 +14,7 @@ Imagine that as part of your thesis you are studying the transcription factor CT
 and \verb|analyze.R| creates diagnostic plots on the length of the peaks and their distribution across the genome.
 
 If you have just installed Git, the first thing you need to do is provide some information about yourself, since it records who makes each change to the file(s).
-Set your name and email by running the following lines, but replacing "First Last" and "user@domain" with your full name and email address, respectively.
+Set your name and email by running the following lines, but replacing ``First Last'' and ``user@domain'' with your full name and email address, respectively.
 
 \begin{lstlisting}
 $ git config --global user.name "First Last"
@@ -60,12 +60,12 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 There are a few key things to notice from this output.
 First, the three scripts are recognized as untracked files because you have not told Git to take snapshots of anything yet.
-Second, the word "commit" is Git terminology for snapshot. 
-As a noun it means "a version of the code", e.g. "the figure was generated using the commit from yesterday" (Box 1).
-This word can also be used as a verb, in which case it means "to save", e.g. "to commit a change."
+Second, the word ``commit'' is Git terminology for snapshot.
+As a noun it means ``a version of the code'', e.g. ``the figure was generated using the commit from yesterday'' (Box 1).
+This word can also be used as a verb, in which case it means ``to save'', e.g. ``to commit a change.''
 Lastly, the output explains how you can start tracking your files.
-Tracking code is a two-step process. 
-First, you must specify which files you would like to take a snapshot of (stage the files in Git terminology), and second, you actually tell Git to take that snapshot (commit the files in git terminology). 
+Tracking code is a two-step process.
+First, you must specify which files you would like to take a snapshot of (stage the files in Git terminology), and second, you actually tell Git to take that snapshot (commit the files in git terminology).
 To tell Git which files to stage, you need to use the command \verb|git add file|, where file is any file you would like to take a snapshot of.
 Add the file \verb|process.sh|.
 
@@ -207,8 +207,7 @@ $ git checkout 660213b clean.py
 At this point, you have learned the commands needed to version your code with Git.
 Thus you already have the benefits of being able to make edits to files without copying them first, to create a record of your changes with accompanying messages, and to revert to previous versions of the files if needed.
 Now you will always be able to recreate past results that were generated with previous versions of the code and see the exact changes you have made over the course of a project.
-  
-  
-  
-  
-  
+
+
+
+
