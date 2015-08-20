@@ -16,10 +16,10 @@ and \verb|analyze.R| creates diagnostic plots on the length of the peaks and the
 If you have just installed Git, the first thing you need to do is provide some information about yourself, since it records who makes each change to the file(s).
 Set your name and email by running the following lines, but replacing ``First Last'' and ``user@domain'' with your full name and email address, respectively.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ git config --global user.name "First Last"
 $ git config --global user.email "user@domain"
-\end{lstlisting}
+\end{verbatim}
 
 To start versioning your code with Git, navigate to your newly created or existing project directory (in this case, \verb|~/thesis|).
 Run the command \verb|git init| to initialize the current folder as a Git repository.
@@ -27,13 +27,13 @@ A repository (or repo, for short) refers to the current version of the tracked f
 Only files that are located within an initialized repository can be version controlled.
 Typically, projects tend to be stored in a single repository and for more information about organizational strategies see Nobel \cite{19649301}.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ cd ~/thesis
 $ ls
 analyze.R clean.py process.sh
 $ git init
 Initialized empty Git repository in ~/thesis/.git/
-\end{lstlisting}
+\end{verbatim}
 
 Now you are ready to start tracking your code (Figure \ref{fig:Fig1}).
 Conceptually, Git saves snapshots of the changes you make to your files whenever you instruct it to.
@@ -42,7 +42,7 @@ If you tell Git to save a shapshot of the updated document, then you will have a
 In the Git framework, any changes you have made to a script, but have not yet recorded as a snapshot with Git, reside in the working directory only (Figure \ref{fig:Fig1}).
 To follow what Git is doing as you record the initial version of your files, use the informative command \verb|git status|.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ git status
 On branch master
 
@@ -56,7 +56,7 @@ Untracked files:
         process.sh
 
 nothing added to commit but untracked files present (use "git add" to track)
-\end{lstlisting}
+\end{verbatim}
 
 There are a few key things to notice from this output.
 First, the three scripts are recognized as untracked files because you have not told Git to take snapshots of anything yet.
@@ -69,13 +69,13 @@ First, you must specify which files you would like to take a snapshot of (stage 
 To tell Git which files to stage, you need to use the command \verb|git add file|, where file is any file you would like to take a snapshot of.
 Add the file \verb|process.sh|.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ git add process.sh
-\end{lstlisting}
+\end{verbatim}
 
 And check its new status.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ git status
 On branch master
 
@@ -91,7 +91,7 @@ Untracked files:
 
         analyze.R
         clean.py
-\end{lstlisting}
+\end{verbatim}
 
 Now the file \verb|process.sh| has been added to the staging area, while both \verb|clean.py| and \verb|analyze.R| remain unstaged.
 Adding a file to the staging area will result in the changes to that file being included in the next commit, or snapshot of the code (Figure \ref{fig:Fig1}).
@@ -100,7 +100,7 @@ As an analogy, adding files to the staging area is like putting things in a box 
 Since this will be the first commit, or first version of the code, add the other two files to the staging area as well.
 Then create the first commit using the command \verb|git commit|.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ git add clean.py analyze.R
 $ git commit -m "Add initial version of thesis code."
 [master (root-commit) 660213b] Add initial version of thesis code.
@@ -108,7 +108,7 @@ $ git commit -m "Add initial version of thesis code."
  create mode 100644 analyze.R
  create mode 100644 clean.py
  create mode 100644 process.sh
-\end{lstlisting}
+\end{verbatim}
 
 Notice the flag \verb|-m| was used to pass a message for the commit.
 This message describes the changes that have been made to the code and is required.
@@ -120,14 +120,14 @@ Since Git records all of the commits, you can always look through the complete h
 To view the record of your commits, use the command \verb|git log|.
 For each commit, it lists the the unique identifier for that revision, author, date, and commit message.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ git log
 commit 660213b91af167d992885e45ab19f585f02d4661
 Author: First Last <user@domain>
 Date:   Sun Mar 29 14:52:05 2015 -0500
 
     Add initial version of thesis code.
-\end{lstlisting}
+\end{verbatim}
 
 The commit identifier can be used to compare two different versions of a file, restore a file to a previous version from a past commit, and even retrieve tracked files if you accidentally delete them.
 
@@ -135,7 +135,7 @@ Now you are free to make changes to the files knowing that you can always revert
 As an example, edit \verb|clean.py| so that the fold change cutoff for filtering peaks is more stringent.
 Here is the current bottom of the file.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ tail clean.py
 # Filter based on fold-change over control sample
 fc_cutoff = 10
@@ -147,11 +147,11 @@ kidney = kidney.filter(filter_fold_change, fc = fc_cutoff).saveas()
 combined = pybedtools.BedTool().multi_intersect(i = [epithelial.fn, proximal_tube.fn, kidney.fn])
 union = combined.filter(lambda x: int(x[3]) == 3).saveas()
 union.cut(range(3)).saveas(data + "/sites-union.bed")
-\end{lstlisting}
+\end{verbatim}
 
 Increase the fold change cutoff from 10 to 20.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ tail clean.py
 # Filter based on fold-change over control sample
 fc_cutoff = 20
@@ -163,11 +163,11 @@ kidney = kidney.filter(filter_fold_change, fc = fc_cutoff).saveas()
 combined = pybedtools.BedTool().multi_intersect(i = [epithelial.fn, proximal_tube.fn, kidney.fn])
 union = combined.filter(lambda x: int(x[3]) == 3).saveas()
 union.cut(range(3)).saveas(data + "/sites-union.bed")
-\end{lstlisting}
+\end{verbatim}
 
 You can view all the unstaged differences between the current version and last committed version of the file by running the command \verb|git diff|.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ git diff
 diff --git a/clean.py b/clean.py
 index 7b8c058..76d84ce 100644
@@ -182,26 +182,26 @@ index 7b8c058..76d84ce 100644
  epithelial = epithelial.filter(filter_fold_change, fc = fc_cutoff).saveas()
  proximal_tube = proximal_tube.filter(filter_fold_change, fc = fc_cutoff).saveas()
  kidney = kidney.filter(filter_fold_change, fc = fc_cutoff).saveas()
-\end{lstlisting}
+\end{verbatim}
 
 The new line starts with \verb|+| and the previous line starts with \verb|-|.
 You can ignore the first five lines of output because they are directions for other software programs that can merge changes to files.
 If you wanted to save this edit, you could add \verb|clean.py| to the staging area using \verb|git add| and then commit the change using \verb|git commit|, as you did above.
 Instead, this time restore the last committed version of the file using the command \verb|git checkout|.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ git checkout -- clean.py
 $ git diff
-\end{lstlisting}
+\end{verbatim}
 
 Now \verb|git diff| returns no output because \verb|git checkout| reverted \verb|clean.py| to the version in the last commit.
 And this ability to revert to past versions of a file is not limited to just the last commit.
 If you had committed multiple changes to the file \verb|clean.py| and then decided you wanted the original version, you could replace the argument \verb|--| with the commit identifier (we only need to specify the first seven characters for it to be unique).
 The \verb|--| used above was simply a placeholder for the first argument because by default \verb|git checkout| restores the most recent version of the file.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ git checkout 660213b clean.py
-\end{lstlisting}
+\end{verbatim}
 
 
 At this point, you have learned the commands needed to version your code with Git.

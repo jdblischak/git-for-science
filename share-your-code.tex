@@ -20,17 +20,17 @@ Notice that this URL is using the HTTPS protocol, which is the quickest to begin
 However it requires you to enter your username and password when communicating with GitHub, so you'll want to considering switching to the SSH protocol once you are regularly using Git and GitHub (see \href{https://help.github.com/articles/generating-ssh-keys/}{help.github.com/articles/generating-ssh-keys} for directions).
 In order to link the local thesis repository on your computer to the remote repository you just created, in your local repository you need to tell Git the URL of the remote repository using the command \verb|git remote add|.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ git remote add origin https://github.com/username/thesis.git
-\end{lstlisting}
+\end{verbatim}
 
 The name ``origin'' is a bookmark for the remote repository so that you do not have to type out the full URL every time you transfer your changes (this is the default name for a remote repository, but you could use another name if you like).
 
 Send your code to GitHub using the command \verb|git push| (Figure \ref{fig:Fig3}).
 
-\begin{lstlisting}
+\begin{verbatim}
 $ git push origin master
-\end{lstlisting}
+\end{verbatim}
 
 You first specify the remote repository, ``origin''.
 Second, you tell Git to push to the ``master'' copy of the repository - we will not go into other options in this tutorial, but Box 2 discusses them briefly.
@@ -40,9 +40,9 @@ Also, it can be used to transfer your code across multiple machines, similar to 
 For example, what if you wanted to work on your code on your computer at home?
 You can download the Git repository using the command \verb|git clone|.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ git clone https://github.com/username/thesis.git
-\end{lstlisting}
+\end{verbatim}
 
 By default, this will download the Git repository into a local directory named ``thesis''.
 Furthermore, the remote ``origin'' will automatically be added so that you can easily push your changes back to GitHub.
@@ -51,9 +51,9 @@ You can make changes, commit them on your home computer, and send those commits 
 
 Then the next day back at your work computer, you could update the code with the changes you made the previous evening using the command \verb|git pull|.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ git pull origin master
-\end{lstlisting}
+\end{verbatim}
 
 This pulls in all the commits that you had previously pushed to the GitHub remote repository from your home computer.
 In this workflow, you are essentially collaborating with yourself as you work from multiple computers.

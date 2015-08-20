@@ -13,24 +13,24 @@ As an exercise, you will add a file to the repository that we used to write this
 First, go to \href{https://github.com/jdblischak/git-for-science}{github.com/jdblischak/git-for-science} and choose the ``Fork'' option to create a git-for-science repository under your GitHub account.
 In order to make changes, download it to your computer with the command \verb|git clone| from the directory you wish the repo to appear in.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ git clone https://github.com/username/git-for-science.git
-\end{lstlisting}
+\end{verbatim}
 
 Now that you have a local version, navigate to the subdirectory \verb|readers| and create a text file named as your GitHub username.
 
-\begin{lstlisting}
+\begin{verbatim}
 $ cd git-for-science/readers
 $ touch username.txt
-\end{lstlisting}
+\end{verbatim}
 
 Add and commit this new file, and then push the changes back to your remote repository on GitHub (Figure \ref{fig:Fig4}).
 
-\begin{lstlisting}
+\begin{verbatim}
 $ git add username.txt
 $ git commit -m "Add username to directory of readers."
 $ git push origin master
-\end{lstlisting}
+\end{verbatim}
 
 Currently, the new file you created, \verb|readers/username.txt|, only exists in your fork of git-for-science.
 To merge this file into the main repository, send a pull request using the GitHub interface (Pull request -\textgreater New pull request -\textgreater Create pull request).
