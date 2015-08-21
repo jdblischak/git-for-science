@@ -9,7 +9,9 @@ There are many graphical user interfaces (GUIs) available for running Git (Table
 To follow along, first create a folder in your home directory named \verb|thesis|.
 Next download the three files provided in Supporting Information and place them in the \verb|thesis| directory.
 Imagine that as part of your thesis you are studying the transcription factor CTCF, and you want to identify high-confidence binding sites in kidney epithelial cells.
-\verb|process.sh| downloads some ENCODE ChIP-seq data from multiple types of kidney samples and calls peaks,
+To do this, you will utilize publicly available ChIP-seq data produced by the ENCODE consortium \cite{22955616}.
+ChIP-seq is a method for finding the sites in the genome where a transcription factor is bound, and these sites are referred to as peaks \cite{24244136}.
+\verb|process.sh| downloads the ENCODE CTCF ChIP-seq data from multiple types of kidney samples and calls peaks,
 \verb|clean.py| filters peaks with a fold change cutoff and merges peaks from the different kidney samples,
 and \verb|analyze.R| creates diagnostic plots on the length of the peaks and their distribution across the genome.
 
@@ -211,3 +213,5 @@ Now you will always be able to recreate past results that were generated with pr
 
 
 
+
+  
