@@ -68,9 +68,7 @@ Second, the word ``commit'' is Git terminology for snapshot.
 As a noun it means ``a version of the code'', e.g. ``the figure was generated using the commit from yesterday'' (Box 1).
 This word can also be used as a verb, in which case it means ``to save'', e.g. ``to commit a change.''
 Lastly, the output explains how you can start tracking your files.
-Tracking code is a two-step process.
-First, you must specify which files you would like to take a snapshot of (stage the files in Git terminology), and second, you actually tell Git to take that snapshot (commit the files in Git terminology).
-To tell Git which files to stage, you need to use the command \verb|git add file|, where file is any file you would like to take a snapshot of.
+You need to use the command \verb|git add|.
 Add the file \verb|process.sh|.
 
 \begin{verbatim}
@@ -97,11 +95,13 @@ Untracked files:
         clean.py
 \end{verbatim}
 
-Now the file \verb|process.sh| has been added to the staging area, while both \verb|clean.py| and \verb|analyze.R| remain unstaged.
-Adding a file to the staging area will result in the changes to that file being included in the next commit, or snapshot of the code (Figure \ref{fig:Fig1}).
+Since this is the first time that you have told Git about the file \verb|process.sh|, two key things have happened.
+First, this file is now being tracked, which means Git recognizes it as a file you wish to be version controlled (Box 1).
+Second, the changes made to the file (in this case the entire file because it is the first commit) have been added to the staging area (Figure \ref{fig:Fig1}).
+Adding a file to the staging area will result in the changes to that file being included in the next commit, or snapshot of the code (Box 1).
 As an analogy, adding files to the staging area is like putting things in a box to mail off, and committing is like putting the box in the mail.
 
-Since this will be the first commit, or first version of the code, add the other two files to the staging area as well.
+Since this will be the first commit, or first version of the code, use \verb|git add| to begin tracking the other two files and add their changes to the staging area as well.
 Then create the first commit using the command \verb|git commit|.
 
 \begin{verbatim}
@@ -216,6 +216,7 @@ Now you will always be able to recreate past results that were generated with pr
 
 
 
+  
   
   
   
