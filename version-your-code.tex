@@ -146,9 +146,9 @@ fc_cutoff = 10
 epithelial = epithelial.filter(filter_fold_change, fc = fc_cutoff).saveas()
 proximal_tube = proximal_tube.filter(filter_fold_change, fc = fc_cutoff).saveas()
 kidney = kidney.filter(filter_fold_change, fc = fc_cutoff).saveas()
-
 # Identify only those sites that are peaks in all three tissue types
-combined = pybedtools.BedTool().multi_intersect(i = [epithelial.fn, proximal_tube.fn, kidney.fn])
+combined = pybedtools.BedTool().multi_intersect(
+           i = [epithelial.fn, proximal_tube.fn, kidney.fn])
 union = combined.filter(lambda x: int(x[3]) == 3).saveas()
 union.cut(range(3)).saveas(data + "/sites-union.bed")
 \end{verbatim}
@@ -162,9 +162,9 @@ fc_cutoff = 20
 epithelial = epithelial.filter(filter_fold_change, fc = fc_cutoff).saveas()
 proximal_tube = proximal_tube.filter(filter_fold_change, fc = fc_cutoff).saveas()
 kidney = kidney.filter(filter_fold_change, fc = fc_cutoff).saveas()
-
 # Identify only those sites that are peaks in all three tissue types
-combined = pybedtools.BedTool().multi_intersect(i = [epithelial.fn, proximal_tube.fn, kidney.fn])
+combined = pybedtools.BedTool().multi_intersect(
+           i = [epithelial.fn, proximal_tube.fn, kidney.fn])
 union = combined.filter(lambda x: int(x[3]) == 3).saveas()
 union.cut(range(3)).saveas(data + "/sites-union.bed")
 \end{verbatim}
