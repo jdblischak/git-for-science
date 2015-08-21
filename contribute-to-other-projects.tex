@@ -1,7 +1,7 @@
 \subsection{Contribute to other projects}
 
 Lots of scientific software is hosted online in Git repositories.
-Now that you know the basics of Git, you can directly contribute to developing the scientific software you use for your research.
+Now that you know the basics of Git, you can directly contribute to developing the scientific software you use for your research (Figure \ref{fig:Fig4}).
 From a small contribution like fixing a typo in the documentation to a larger change such as fixing a bug, it is empowering to be able to improve the software used by you and many other scientists.
 
 When contributing to a larger project with many contributors, you will not be able to push your changes with \verb|git push| directly to the project's remote repository.
@@ -10,21 +10,21 @@ You can fork any repository on GitHub by clicking the button ``Fork'' on the top
 
 Once you have a fork of a project's repository, you can clone it to your computer and make changes just like a repository you created yourself.
 As an exercise, you will add a file to the repository that we used to write this paper.
-First, go to \href{https://github.com/jdblischak/git-for-science}{github.com/jdblischak/git-for-science} and choose the ``Fork'' option to create a git-for-science repository under your GitHub account.
-In order to make changes, download it to your computer with the command \verb|git clone| from the directory you wish the repo to appear in.
+First, go to \href{https://github.com/jdblischak/git-for-science}{github.com/jdblischak/git-for-science} and choose the ``Fork'' option to create a git-for-science repository under your GitHub account (Figure \ref{fig:Fig4}B).
+In order to make changes, download it to your computer with the command \verb|git clone| from the directory you wish the repo to appear in (Figure \ref{fig:Fig4}C).
 
 \begin{verbatim}
 $ git clone https://github.com/username/git-for-science.git
 \end{verbatim}
 
-Now that you have a local version, navigate to the subdirectory \verb|readers| and create a text file named as your GitHub username.
+Now that you have a local version, navigate to the subdirectory \verb|readers| and create a text file named as your GitHub username (Figure \ref{fig:Fig4}D).
 
 \begin{verbatim}
 $ cd git-for-science/readers
 $ touch username.txt
 \end{verbatim}
 
-Add and commit this new file, and then push the changes back to your remote repository on GitHub (Figure \ref{fig:Fig4}).
+Add and commit this new file (Figure \ref{fig:Fig4}D), and then push the changes back to your remote repository on GitHub (Figure \ref{fig:Fig4}E).
 
 \begin{verbatim}
 $ git add username.txt
@@ -33,7 +33,7 @@ $ git push origin master
 \end{verbatim}
 
 Currently, the new file you created, \verb|readers/username.txt|, only exists in your fork of git-for-science.
-To merge this file into the main repository, send a pull request using the GitHub interface (Pull request -\textgreater New pull request -\textgreater Create pull request).
+To merge this file into the main repository, send a pull request using the GitHub interface (Pull request -\textgreater New pull request -\textgreater Create pull request; Figure \ref{fig:Fig4}F).
 After the pull request is created, we can review your change and then merge it into the main repository.
 Although this process of forking a project’s repository and issuing a pull request seems like a lot of work to contribute changes, this workflow gives the owner of a project control over what changes get incorporated into the code.
 You can have others contribute to your projects using the same workflow.
