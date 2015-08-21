@@ -215,8 +215,9 @@ $ git diff
 
 Now \verb|git diff| returns no output because \verb|git checkout| undid the unstaged edit you had made to \verb|clean.py|.
 And this ability to undo past edits to a file is not limited to unstaged changes in the working directory.
-If you had committed multiple changes to the file \verb|clean.py| and then decided you wanted the original version from the initial commit, you could replace the argument \verb|--| with the commit identifier of the first commit you made above (we only need to specify the first seven characters for it to be unique).
+If you had committed multiple changes to the file \verb|clean.py| and then decided you wanted the original version from the initial commit, you could replace the argument \verb|--| with the commit identifier of the first commit you made above (your commit identifier will be different; use \verb|git log| to find it).
 The \verb|--| used above was simply a placeholder for the first argument because by default \verb|git checkout| restores the most recent version of the file from the staging area (if you haven't staged any changes to this file, as is the case here, the version of the file in the staging area is identical to the version in the last commit).
+Instead of using the entire commit identifier, use only the first seven characters, which is simply a convention since this is usually long enough for it to be unique.
 
 \begin{verbatim}
 $ git checkout 660213b clean.py
@@ -230,6 +231,7 @@ Now you will always be able to recreate past results that were generated with pr
 
 
 
+  
   
   
   
