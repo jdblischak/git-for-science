@@ -108,7 +108,7 @@ Then create the first commit using the command \verb|git commit|.
 $ git add clean.py analyze.R
 $ git commit -m "Add initial version of thesis code."
 [master (root-commit) 660213b] Add initial version of thesis code.
- 3 files changed, 154 insertions(+)
+ 3 files changed, 25 insertions(+)
  create mode 100644 analyze.R
  create mode 100644 clean.py
  create mode 100644 process.sh
@@ -153,7 +153,7 @@ union = combined.filter(lambda x: int(x[3]) == 3).saveas()
 union.cut(range(3)).saveas(data + "/sites-union.bed")
 \end{verbatim}
 
-Using a text editor, increase the fold change cutoff from 10 to 20.
+Increase the fold change cutoff from 10 to 20.
 
 \begin{verbatim}
 $ tail clean.py
@@ -169,22 +169,7 @@ union = combined.filter(lambda x: int(x[3]) == 3).saveas()
 union.cut(range(3)).saveas(data + "/sites-union.bed")
 \end{verbatim}
 
-Because Git is tracking \verb|clean.py|, it recognizes that the file has been changed since the last commit.
-
-\begin{verbatim}
-$ git status
-# On branch master
-# Changes not staged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
-#
-#       modified:   clean.py
-#
-no changes added to commit (use "git add" and/or "git commit -a")
-\end{verbatim}
-
-The report from \verb|git status| indicates that the changes to \verb|clean.py| are not staged, i.e. they are in the working directory (Figure 1).
-To view the unstaged changes, run the command \verb|git diff|.
+You can view all the unstaged differences between the current version and last committed version of the file by running the command \verb|git diff|.
 
 \begin{verbatim}
 $ git diff
@@ -205,36 +190,32 @@ index 7b8c058..76d84ce 100644
 
 The new line starts with \verb|+| and the previous line starts with \verb|-|.
 You can ignore the first five lines of output because they are directions for other software programs that can merge changes to files.
-If you wanted to keep this edit, you could add \verb|clean.py| to the staging area using \verb|git add| and then commit the change using \verb|git commit|, as you did above.
-Instead, this time undo the edit by following the directions from the output of \verb|git status| to ``discard changes in the working directory'' using the command \verb|git checkout|.
+If you wanted to save this edit, you could add \verb|clean.py| to the staging area using \verb|git add| and then commit the change using \verb|git commit|, as you did above.
+Instead, this time restore the last committed version of the file using the command \verb|git checkout|.
 
 \begin{verbatim}
 $ git checkout -- clean.py
 $ git diff
 \end{verbatim}
 
-Now \verb|git diff| returns no output because \verb|git checkout| undid the unstaged edit you had made to \verb|clean.py|.
-And this ability to undo past edits to a file is not limited to unstaged changes in the working directory.
-If you had committed multiple changes to the file \verb|clean.py| and then decided you wanted the original version from the initial commit, you could replace the argument \verb|--| with the commit identifier of the first commit you made above (your commit identifier will be different; use \verb|git log| to find it).
-The \verb|--| used above was simply a placeholder for the first argument because by default \verb|git checkout| restores the most recent version of the file from the staging area (if you haven't staged any changes to this file, as is the case here, the version of the file in the staging area is identical to the version in the last commit).
-Instead of using the entire commit identifier, use only the first seven characters, which is simply a convention since this is usually long enough for it to be unique.
+Now \verb|git diff| returns no output because \verb|git checkout| reverted \verb|clean.py| to the version in the last commit.
+And this ability to revert to past versions of a file is not limited to just the last commit.
+If you had committed multiple changes to the file \verb|clean.py| and then decided you wanted the original version, you could replace the argument \verb|--| with the commit identifier (we only need to specify the first seven characters for it to be unique).
+The \verb|--| used above was simply a placeholder for the first argument because by default \verb|git checkout| restores the most recent version of the file.
 
 \begin{verbatim}
 $ git checkout 660213b clean.py
 \end{verbatim}
 
+
 At this point, you have learned the commands needed to version your code with Git.
 Thus you already have the benefits of being able to make edits to files without copying them first, to create a record of your changes with accompanying messages, and to revert to previous versions of the files if needed.
-Now you will always be able to recreate past results that were generated with previous versions of the code and see the exact changes you have made over the course of a project.
+Now you will always be able to recreate past results that were generated with previous versions of the code (see the command \verb|git tag| for a method to facilitate finding specific past versions) and see the exact changes you have made over the course of a project.
 
 
 
 
 
-  
-  
-  
-  
   
   
   
