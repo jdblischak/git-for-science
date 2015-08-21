@@ -1,9 +1,9 @@
 \subsection{Share your code}
 
-Once you have your files saved in a Git repository, you can share it with your collaborators and the wider scientific community by putting your code online (see Box 4 for advice on licensing your code).
+Once you have your files saved in a Git repository, you can share it with your collaborators and the wider scientific community by putting your code online (see Box 2 for advice on licensing your code).
 This also has the added benefit of creating a backup of your scripts and provides a mechanism for transferring your files across multiple computers.
 Sharing a repository is made easier if you use one of the many online services that host Git repositories (Table 1), e.g. GitHub.
-Note, however, that any files that have not been tracked with at least one commit are not included in the Git repository, even if they are located within the same directory on your local computer (see Box 3 for advice on the types of files that should not be versioned with Git and Box 5 for advice on managing large files).
+Note, however, that any files that have not been tracked with at least one commit are not included in the Git repository, even if they are located within the same directory on your local computer (see Box 3 for advice on the types of files that should not be versioned with Git and Box 4 for advice on managing large files).
 
 To begin using GitHub, you will first need to sign up for an account.
 For the code examples in this tutorial, you will need to replace \verb|username| with the username of your account.
@@ -33,7 +33,7 @@ $ git push origin master
 \end{verbatim}
 
 You first specify the remote repository, ``origin''.
-Second, you tell Git to push to the ``master'' copy of the repository - we will not go into other options in this tutorial, but Box 2 discusses them briefly.
+Second, you tell Git to push to the ``master'' copy of the repository - we will not go into other options in this tutorial, but Box 5 discusses them briefly.
 
 Pushing to GitHub also has the added benefit of backing up your code in case anything were to happen to your computer.
 Also, it can be used to manually transfer your code across multiple machines, similar to a service like Dropbox, but with the added capabilities and control of Git.
@@ -62,5 +62,3 @@ You can do this by adding them as Collaborators on your repository (Settings -\t
 However, with projects with lots of contributors, GitHub provides a workflow for finer-grained control of the code development.
 
 With the addition of a GitHub account and a few commands for sending and receiving code, you can now share your code with others, transfer your code across multiple machines, and setup simple collaborative workflows.
-
-  
