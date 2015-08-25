@@ -7,9 +7,10 @@ methods.tex
 table-1-resources.tex
 box-1-definitions.tex
 box-2-licensing.tex
-box-3-what-not-to-version-control.tex
-box-4-managing-large-files.tex
-box-5-branching.tex
+box-3-being-scooped.tex
+box-4-what-not-to-version-control.tex
+box-5-managing-large-files.tex
+box-6-branching.tex
 figures/figure-legends.tex
 figures/Fig1/Fig1.png
 figures/Fig2/Fig2.png
