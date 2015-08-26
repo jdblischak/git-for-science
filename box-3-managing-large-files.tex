@@ -1,4 +1,4 @@
-\subsection{Box 5: Managing large files}
+\subsection{Box 3: Managing large files}
 
 Many biological applications require handling large data files.
 While Git is best-suited for collaboratively writing small text files, nonetheless collaboratively working on projects in the biological sciences necesitates managing this data.
@@ -8,7 +8,7 @@ Since these large, binary files are not going to change, there is no reason to v
 Thus hosting them on a remote http (as ENCODE has done in this case) or ftp site allows each collaborator to download it to her machine as needed, e.g. using \verb|wget|, \verb|curl|, or \verb|rsync|.
 If the data files for your project are smaller, you could also share them via services like Dropbox or Google Drive.
 
-However, some intermediate data files may change over time, and the practical necessity to ensure all collaborators are using the same data set may override the advice to \textit{not} put code output under version control, as described in Box 4.
+However, some intermediate data files may change over time, and the practical necessity to ensure all collaborators are using the same data set may override the advice to \textit{not} put code output under version control, as described in Box 2.
 Again returning to the ChIP-seq example, the first step calling the peaks is the most difficult computationally because it requires access to a Unix-like environment and sufficient computational resources.
 Thus for collaborators that want to experiment with \verb|clean.py| and \verb|analyze.R| without having to run \verb|process.sh|, you could version the data files containing the ChIP-seq peaks (which are in bed format).
 But since these files are larger than that typically used with Git, you can instead use one of the solutions for versioning large files within a Git repository without actually saving the file with Git, e.g. git-annex (\href{https://git-annex.branchable.com/}{git-annex.branchable.com}) or git-fat (\href{https://github.com/jedbrown/git-fat/}{github.com/jedbrown/git-fat}).
