@@ -11,10 +11,10 @@ box-3-being-scooped.tex
 box-4-what-not-to-version-control.tex
 box-5-managing-large-files.tex
 box-6-branching.tex
+box-7-sharing-policies.tex
 figures/figure-legends.tex
 figures/Fig1/Fig1.png
 figures/Fig2/Fig2.png
 figures/Fig3/Fig3.png
 figures/Fig4/Fig4.png
 
-  
