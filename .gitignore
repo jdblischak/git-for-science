@@ -1,2 +1,9 @@
 data/
 *~
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.log
+*.out
+*.zip
