@@ -1,7 +1,7 @@
 % Template for PLoS
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL git-for-science-2015-05-08/blischak-et-al-2015.tex   Wed Aug 26 23:36:09 2015
-%DIF ADD blischak-et-al-2015.tex                              Wed Aug 26 23:06:05 2015
+%DIF ADD blischak-et-al-2015.tex                              Thu Aug 27 10:37:11 2015
 % Version 1.0 January 2009
 %
 % To compile to pdf, run:
@@ -122,7 +122,7 @@ It is difficult to remember the differences between the versions of the files, a
 Second, you will likely share your code with multiple lab mates or collaborators and they may have suggestions on how to improve it.
 If you email the code to multiple people, you will have to manually incorporate all the changes each of them sends.
 
-Fortunately, software engineers have already developed software to manage these issues: version control. 
+Fortunately, software engineers have already developed software to manage these issues: version control.
 \DIFdelbegin \DIFdel{Version control software }\DIFdelend \DIFaddbegin \DIFadd{A version control system (VCS) }\DIFaddend allows you to track the iterative changes you make to your code.
 Thus you can experiment with new ideas but always have the option to revert to a specific past version of the code you used to generate particular results.
 Furthermore, you can record messages as you save each successive version so that you (or anyone else) reviewing the development history of the code is able to understand the rationale for the given edits.
@@ -130,7 +130,8 @@ Also, it facilitates collaboration.
 Using \DIFdelbegin \DIFdel{version control software}\DIFdelend \DIFaddbegin \DIFadd{a VCS}\DIFaddend , your collaborators can make and save changes to the code, and you can automatically incorporate these changes to the main code base.
 The collaborative aspect is enhanced with the emergence of websites that host version controlled code.
 
-In this quick guide, we introduce you to one \DIFdelbegin \DIFdel{version control system (VCS)}\DIFdelend \DIFaddbegin \DIFadd{VCS}\DIFaddend , Git (\href{http://git-scm.com/}{git-scm.com}), and one online hosting site, GitHub (\href{https://github.com}{github.com}), both of which are currently popular among scientists and programmers in general.
+In this quick guide, we introduce you to one \DIFdelbegin \DIFdel{version control system (VCS)}\DIFdelend \DIFaddbegin \DIFadd{VCS}\DIFaddend , Git (\DIFdelbegin %DIFDELCMD < \href{http://git-scm.com/}{git-scm.com}%%%
+\DIFdelend \DIFaddbegin \href{https://git-scm.com/}{git-scm.com}\DIFaddend ), and one online hosting site, GitHub (\href{https://github.com}{github.com}), both of which are currently popular among scientists and programmers in general.
 More importantly, we hope to convince you that although mastering a given VCS takes time, you can already achieve great benefits by getting started using a few simple commands.
 Furthermore, not only does using a VCS solve many common problems when writing code, it can also improve the scientific process.
 By tracking your code development with a VCS and hosting it online, you are performing science that is more transparent, reproducible, and open to collaboration \cite{23448176, 24415924}.
@@ -493,7 +494,7 @@ It will have the form \DIFdelbegin %DIFDELCMD < \verb|https://github.com/usernam
 \DIFdel{, e.
 g.
 }%DIFDELCMD < \verb|https://github.com/scientist123/thesis.git|%%%
-\DIFdelend \DIFaddbegin \verb|https://github.com/username/thesis.git| \DIFadd{(this can be found on your repository page under the header "HTTPS clone URL").
+\DIFdelend \DIFaddbegin \verb|https://github.com/username/thesis.git| \DIFadd{(this can be found on your repository page under the header ``HTTPS clone URL'').
 Notice that this URL is using the HTTPS protocol, which is the quickest to begin using.
 However it requires you to enter your username and password when communicating with GitHub, so you'll want to considering switching to the SSH protocol once you are regularly using Git and GitHub (see }\href{https://help.github.com/articles/generating-ssh-keys/}{help.github.com/articles/generating-ssh-keys} \DIFadd{for directions)}\DIFaddend .
 In order to link the local thesis repository on your computer to the remote repository you just created, in your local repository you need to tell Git the URL of the remote repository using the command \verb|git remote add| \DIFaddbegin \DIFadd{(Figure \ref{fig:Fig3}C)}\DIFaddend .
@@ -638,8 +639,8 @@ The Git repo is available at \href{https://github.com/jdblischak/git-for-science
 
 \begin{tabular}{ c c }
     \textbf{\DIFadd{Resource}} & \textbf{\DIFadd{Options}} \\
-    \DIFadd{Distibuted VCS }& \DIFadd{Git (}\href{http://git-scm.com}{git-scm.com}\DIFadd{) }\\
-                   & \DIFadd{Mercurial (}\href{http://mercurial.selenic.com}{mercurial.selenic.com}\DIFadd{) }\\
+    \DIFadd{Distibuted VCS }& \DIFadd{Git (}\href{https://git-scm.com}{git-scm.com}\DIFadd{) }\\
+                   & \DIFadd{Mercurial (}\href{https://mercurial.selenic.com}{mercurial.selenic.com}\DIFadd{) }\\
                    & \DIFadd{Bazaar (}\href{http://bazaar.canonical.com}{bazaar.canonical.com}\DIFadd{) }\\
     \DIFadd{Online hosting site }& \DIFadd{GitHub (}\href{https://github.com}{github.com}\DIFadd{) }\\
                         & \DIFadd{Bitbucket (}\href{https://bitbucket.org}{bitbucket.org}\DIFadd{) }\\
