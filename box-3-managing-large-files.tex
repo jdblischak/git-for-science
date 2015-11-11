@@ -3,7 +3,7 @@
 Many biological applications require handling large data files.
 While Git is best-suited for collaboratively writing small text files, nonetheless collaboratively working on projects in the biological sciences necesitates managing this data.
 
-The example analysis pipeline in this tutorial starts by downloading data files in bam format which contain the alignments of short reads from a ChIP-seq experiment to the human genome.
+The example analysis pipeline in this tutorial starts by downloading data files in BAM format which contain the alignments of short reads from a ChIP-seq experiment to the human genome.
 Since these large, binary files are not going to change, there is no reason to version them with Git.
 Thus hosting them on a remote http (as ENCODE has done in this case) or ftp site allows each collaborator to download it to her machine as needed, e.g. using \verb|wget|, \verb|curl|, or \verb|rsync|.
 If the data files for your project are smaller, you could also share them via services like Dropbox or Google Drive.
