@@ -203,7 +203,9 @@ index 7b8c058..76d84ce 100644
  kidney = kidney.filter(filter_fold_change, fc = fc_cutoff).saveas()
 \end{verbatim}
 
-The new line starts with \verb|+| and the previous line starts with \verb|-|.
+Any lines of text that have been added to the script are indicated with a \verb|+| and any lines that have been removed with a \verb|-|.
+Here, we altered the line of code which sets the value of \verb|fc_cutoff|.
+\verb|git diff| displays this change as the previous line being removed and a new line being added with our updates incorporated.
 You can ignore the first five lines of output because they are directions for other software programs that can merge changes to files.
 If you wanted to keep this edit, you could add \verb|clean.py| to the staging area using \verb|git add| and then commit the change using \verb|git commit|, as you did above.
 Instead, this time undo the edit by following the directions from the output of \verb|git status| to ``discard changes in the working directory'' using the command \verb|git checkout|.
