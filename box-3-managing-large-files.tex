@@ -6,7 +6,7 @@ While Git is best-suited for collaboratively writing small text files, nonethele
 The example analysis pipeline in this tutorial starts by downloading data files in BAM format which contain the alignments of short reads from a ChIP-seq experiment to the human genome.
 Since these large, binary files are not going to change, there is no reason to version them with Git.
 Thus hosting them on a remote http (as ENCODE has done in this case) or ftp site allows each collaborator to download it to her machine as needed, e.g. using \verb|wget|, \verb|curl|, or \verb|rsync|.
-If the data files for your project are smaller, you could also share them via services like Dropbox or Google Drive.
+If the data files for your project are smaller, you could also share them via services like Dropbox (\href{www.dropbox.com}{dropbox.com}) or Google Drive (\href{https://www.google.com/drive/}{google.com/drive}).
 
 However, some intermediate data files may change over time, and the practical necessity to ensure all collaborators are using the same data set may override the advice to \textit{not} put code output under version control, as described in Box 2.
 Again returning to the ChIP-seq example, the first step calling the peaks is the most difficult computationally because it requires access to a Unix-like environment and sufficient computational resources.
