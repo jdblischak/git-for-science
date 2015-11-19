@@ -1,6 +1,6 @@
-#A quick introduction to version control with Git and GitHub
+# A quick introduction to version control with Git and GitHub
 
-##Synopsis and Motivation
+## Synopsis and Motivation
 
 This is the repository for the paper "A quick introduction to version control with Git and GitHub".
 The goal of this paper was to introduce scientists to the concepts behind version control (using Git) so that they can incorporate these practices into their workflows.
@@ -21,10 +21,15 @@ If you haven't contributed already, we'd love to see your PR!
 
 [contribute]: https://www.authorea.com/users/5990/articles/17489/_show_article#article-paragraph-contribute__minus__to__minus__other__minus__projects__dot__tex-landing-welcome
 
-##Contributors
+## Example code
+
+The example code, which were provided as supplementary files, can be found in the sudirectory `code`.
+If you're interested in running the scripts, please see the [README](code/README.md) in that directory for instructions.
+
+## Contributors
 
 Thank you to all of our [contributors](https://github.com/jdblischak/git-for-science/graphs/contributors)!
 
-##License
+## License
 
 Please see our [license](LICENSE)
