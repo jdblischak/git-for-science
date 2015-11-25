@@ -74,7 +74,7 @@
 
 
 
-\subsection{Introduction to version control}
+\subsection*{Introduction to version control}
 
 Many scientists write code as part of their research.
 Just as experiments are logged in laboratory notebooks, it is important to document the code you use for analysis.
@@ -101,7 +101,7 @@ By tracking your code development with a VCS and hosting it online, you are perf
 There is no reason this framework needs to be limited only to code; a VCS is well-suited for tracking any plain-text files: manuscripts, electronic lab notebooks, protocols, etc.
 
 
-\subsection{Version your code}
+\subsection*{Version your code}
 
 The first step is to learn how to version your own code.
 In this tutorial, we will run Git from the command line of the Unix shell.
@@ -332,7 +332,7 @@ Thus you already have the benefits of being able to make edits to files without 
 Now you will always be able to recreate past results that were generated with previous versions of the code (see the command \verb|git tag| for a method to facilitate finding specific past versions) and see the exact changes you have made over the course of a project.
 
 
-\subsection{Share your code}
+\subsection*{Share your code}
 
 Once you have your files saved in a Git repository, you can share it with your collaborators and the wider scientific community by putting your code online (Figure \ref{fig:Fig3}).
 This also has the added benefit of creating a backup of your scripts and provides a mechanism for transferring your files across multiple computers.
@@ -402,7 +402,7 @@ However, with projects with lots of contributors, GitHub provides a workflow for
 With the addition of a GitHub account and a few commands for sending and receiving code, you can now share your code with others, transfer your code across multiple machines, and setup simple collaborative workflows.
 
 
-\subsection{Contribute to other projects}
+\subsection*{Contribute to other projects}
 
 Lots of scientific software is hosted online in Git repositories.
 Now that you know the basics of Git, you can directly contribute to developing the scientific software you use for your research (Figure \ref{fig:Fig4}).
@@ -445,7 +445,7 @@ You can have others contribute to your projects using the same workflow.
 The ability to use Git to contribute changes is very powerful because it allows you to improve the software that is used by many other scientists and also potentially shape the future direction of its development.
 
 
-\subsection{Conclusion}
+\subsection*{Conclusion}
 
 Git, albeit complicated at first, is a powerful tool that can improve code development and documentation.
 Ultimately the complexity of a VCS not only gives users a well-documented ``undo'' button for their analyses, but it also allows for collaboration and sharing of code on a massive scale.
@@ -456,13 +456,13 @@ Adding a few additional commands (\verb|git push|, \verb|git clone|, \verb|git p
 Lastly, by forking public repositories and sending pull requests, you can directly improve scientific software (Figure \ref{fig:Fig4}).
 
 
-\subsection{Methods}
+\subsection*{Methods}
 
 We collaboratively wrote the article in LaTeX (\href{http://www.latex-project.org/}{latex-project.org}) using the online authoring platform Authorea (\href{https://www.authorea.com}{authorea.com}).
 Furthermore, we tracked the development of the document using Git and GitHub.
 The Git repo is available at \href{https://github.com/jdblischak/git-for-science}{github.com/jdblischak/git-for-science}, and the rendered LaTeX article is available at \href{https://www.authorea.com/users/5990/articles/17489}{authorea.com/users/5990/articles/17489}.
 
-\subsection{Table 1: Resources}
+\subsection*{Table 1: Resources}
 
 \begin{tabular}{|l|l|}
     \hline
@@ -483,7 +483,7 @@ The Git repo is available at \href{https://github.com/jdblischak/git-for-science
 \end{tabular}
 
 
-\subsection{Box 1: Definitions}
+\subsection*{Box 1: Definitions}
 
 \begin{itemize}
 \item \textbf{Version Control System (VCS)}: \textit{(noun)} a program that tracks changes to specified files over time and maintains a library of all past versions of those files
@@ -504,7 +504,7 @@ The Git repo is available at \href{https://github.com/jdblischak/git-for-science
 \end{itemize}
 
 
-\subsection{Box 2: What \textit{not} to version control}
+\subsection*{Box 2: What \textit{not} to version control}
 
 You \textit{can} version control any file that you put in a Git repository, whether it is text-based, an image, or giant data files. However, just because you \textit{can} version control something, does not mean you \textit{should}. Git works best for plain text based documents such as your scripts or your manuscript if written in LaTeX or Markdown. This is because for text files, Git saves the entire file only the first time you commit it and then saves just your changes with each commit. This takes up very little space and Git has the capability to compare between versions (using \verb|git diff|). You can commit a non-text file, but a full copy of the file will be saved in each commit that modifies it. Over time, you may find the size of your repository growing very quickly. A good rule of thumb is to version control anything text based: your scripts or manuscripts if they are written in plain text. Things \textit{not} to version control are large data files that never change, binary files (including Word and Excel documents), and the output of your code.
 
@@ -520,7 +520,7 @@ In order for these settings to be applied to all instances of the repository, e.
 
 
 
-\subsection{Box 3: Managing large files}
+\subsection*{Box 3: Managing large files}
 
 Many biological applications require handling large data files.
 While Git is best-suited for collaboratively writing small text files, nonetheless collaboratively working on projects in the biological sciences necesitates managing this data.
@@ -544,7 +544,7 @@ Then you can commit the BED files just like your scripts, and they will automati
 Now if you were to change the parameters of the peak calling algorithm and re-run \verb|process.sh|, you could commit the updated BED files and your collaborators could pull the new versions of the files directly to their local Git repositories.
 
 
-\subsection{Box 4: Choosing a license}
+\subsection*{Box 4: Choosing a license}
 
 Putting software and other material in a public place is not the same
 as making it publicly usable.  In order to do that, the authors must
@@ -564,12 +564,12 @@ information, see Jake Vanderplas's blog post from March 2014 at
 For a more in-depth discussion of the legal implications of different licenses, see Morin et al., 2012 \cite{22844236}.
 
 
-\subsection{Box 5: Being Scooped}
+\subsection*{Box 5: Being Scooped}
 
 One concern scientists frequently have about putting work in progress online is that they will be scooped, e.g., that someone will analyze their data and publish a result that they themselves would have, but hadn't yet.  In practice, though, this happens rarely if at all: in fact, the authors are not aware of a single case in which this has actually happened, and would welcome pointers to specific instances.  In practice, it seems more likely that making work public early in something like a version control repository, which automatically adds timestamps to content, will help researchers establish their priority.
 
 
-\subsection{Box 6: Journal Policies}
+\subsection*{Box 6: Journal Policies}
 
 Sharing data, code, and other materials is quickly moving from ``desired'' to ``required''.
 For example, PLOS's sharing policy (\href{http://journals.plos.org/plosone/s/materials-and-software-sharing}{journals.plos.org/plosone/s/materials-and-software-sharing})
@@ -587,14 +587,14 @@ and to our knowledge,
 none has relaxed or reduced sharing requirements in the last decade.
 
 
-\subsection{Box 7: Branching}
+\subsection*{Box 7: Branching}
 
 Do you ever make changes to your code, but are not sure you will want to keep those changes for your final analysis? Or do you need to implement new features while still providing a stable version of the code for others to use? Using Git, you can maintain parallel versions of your code that you can easily bounce between while you are working on your changes. You can think of it like making a copy of the folder you keep your scripts in, so that you have your original scripts intact but also have the new folder where you make changes. Using Git, this is called branching and it is better than separate folders because 1) it uses a fraction of the space on your computer, 2) keeps a record of when you made the parallel copy (branch) and what you have done on the branch, and 3) there is a way to incorporate those changes back into your main code if you decide to keep your changes (and a way to deal with conflicts). By default, your repository will start with one branch, usually called ``master''. To create a new branch in your repository, type \verb|git branch new_branch_name|. You can see what branches a current repository has by typing \verb|git branch|, with the branch you are currently in being marked by a star. To move between branches, type \verb|git checkout branch_to_move_to|. You can edit files and commit them on each branch separately. If you want combine the changes in your new branch with the master branch, you can merge the branches by typing \verb|git merge new_branch_name| while in the master branch.
 
 
 
 
-\subsection{Figure Legends}
+\subsection*{Figure Legends}
 
 \textbf{Figure \ref{fig:Fig1}. The git add/commit process.}
 To store a snapshot of changes in your repository, first \verb|git add| any files to the staging area you wish to commit (for example, you've updated the \verb|process.sh| file).
