@@ -28,7 +28,7 @@
 \usepackage{cite}
 
 % Use doublespacing - comment out for single spacing
-%\usepackage{setspace} 
+%\usepackage{setspace}
 %\doublespacing
 
 
@@ -37,7 +37,7 @@
 \topmargin 0.0cm
 \oddsidemargin 0.5cm
 \evensidemargin 0.5cm
-\textwidth 16cm 
+\textwidth 16cm
 \textheight 21cm
 
 % Bold the 'Figure #' in the caption and separate it with a period
@@ -464,31 +464,32 @@ The Git repo is available at \href{https://github.com/jdblischak/git-for-science
 
 \subsection{Table 1: Resources}
 
-\begin{tabular}{ c c }
-    \textbf{Resource} & \textbf{Options} \\
-    Distibuted VCS & Git (\href{https://git-scm.com}{git-scm.com}) \\
-                   & Mercurial (\href{https://mercurial.selenic.com}{mercurial.selenic.com}) \\
-                   & Bazaar (\href{http://bazaar.canonical.com}{bazaar.canonical.com}) \\
-    Online hosting site & GitHub (\href{https://github.com}{github.com}) \\
-                        & Bitbucket (\href{https://bitbucket.org}{bitbucket.org}) \\
-                        & GitLab (\href{https://about.gitlab.com}{gitlab.com}) \\
-                        & Source Forge (\href{http://sourceforge.net}{sourceforge.net}) \\
-    Git installation & \href{https://git-scm.com/downloads}{git-scm.com/downloads} \\
-    Git Tutorials & Software Carpentry(\href{https://swcarpentry.github.io/git-novice}{swcarpentry.github.io/git-novice}) \\
-                  & Pro Git (\href{https://git-scm.com/book}{git-scm.com/book}) \\
-                  & A Visual Git Reference (\href{https://marklodato.github.io/visual-git-guide}{marklodato.github.io/visual-git-guide}) \\
-                  & tryGit (\href{https://try.github.io}{try.github.io}) \\
-    Graphical User Interface for Git & \href{https://git-scm.com/downloads/guis}{git-scm.com/downloads/guis} \\
+\begin{tabular}{|l|l|}
+    \hline
+    \textbf{Resource} & \textbf{Options} \\ \hline
+    Distibuted VCS & Git (\href{https://git-scm.com}{git-scm.com}) \\ \hline
+                   & Mercurial (\href{https://mercurial.selenic.com}{mercurial.selenic.com}) \\ \hline
+                   & Bazaar (\href{http://bazaar.canonical.com}{bazaar.canonical.com}) \\ \hline
+    Online hosting site & GitHub (\href{https://github.com}{github.com}) \\ \hline
+                        & Bitbucket (\href{https://bitbucket.org}{bitbucket.org}) \\ \hline
+                        & GitLab (\href{https://about.gitlab.com}{gitlab.com}) \\ \hline
+                        & Source Forge (\href{http://sourceforge.net}{sourceforge.net}) \\ \hline
+    Git installation & \href{https://git-scm.com/downloads}{git-scm.com/downloads} \\ \hline
+    Git Tutorials & Software Carpentry(\href{https://swcarpentry.github.io/git-novice}{swcarpentry.github.io/git-novice}) \\ \hline
+                  & Pro Git (\href{https://git-scm.com/book}{git-scm.com/book}) \\ \hline
+                  & A Visual Git Reference (\href{https://marklodato.github.io/visual-git-guide}{marklodato.github.io/visual-git-guide}) \\ \hline
+                  & tryGit (\href{https://try.github.io}{try.github.io}) \\ \hline
+    Graphical User Interface for Git & \href{https://git-scm.com/downloads/guis}{git-scm.com/downloads/guis} \\ \hline
 \end{tabular}
 
 
 \subsection{Box 1: Definitions}
 
 \begin{itemize}
-\item \textbf{Version Control System (VCS)}: \textit{(noun)} a program that tracks changes to specified files over time and maintains a library of all past versions of those files 
+\item \textbf{Version Control System (VCS)}: \textit{(noun)} a program that tracks changes to specified files over time and maintains a library of all past versions of those files
 \item \textbf{Git}: \textit{(noun)} a version control system
 \item \textbf{repository (repo)}: \textit{(noun)} folder containing all tracked files as well as the version control history
-\item \textbf{commit}: \textit{(noun)} a snapshot of changes made to the staged file(s); \textit{(verb)} to save a snapshot of changes made to the staged file(s) 
+\item \textbf{commit}: \textit{(noun)} a snapshot of changes made to the staged file(s); \textit{(verb)} to save a snapshot of changes made to the staged file(s)
 \item \textbf{stage}: \textit{(noun)} the staging area holds the files to be included in the next commit; \textit{(verb)} to mark a file to be included in the next commit
 \item \textbf{track}: \textit{(noun)} a tracked file is one that is recognized by the Git repository
 \item \textbf{branch}: \textit{(noun)} a parallel version of the files in a repository (Box 7)
@@ -515,8 +516,8 @@ In this file, you can list subdirectories and/or file patterns that Git should i
 For example, if your code produced log files with the file extension \verb|.log|, you could instruct Git to ignore these files by adding \verb|*.log| to \verb|.gitignore|.
 In order for these settings to be applied to all instances of the repository, e.g. if you clone it onto another computer, you need to add and commit this file.
 
-  
-  
+
+
 
 
 \subsection{Box 3: Managing large files}
@@ -590,7 +591,7 @@ none has relaxed or reduced sharing requirements in the last decade.
 
 Do you ever make changes to your code, but are not sure you will want to keep those changes for your final analysis? Or do you need to implement new features while still providing a stable version of the code for others to use? Using Git, you can maintain parallel versions of your code that you can easily bounce between while you are working on your changes. You can think of it like making a copy of the folder you keep your scripts in, so that you have your original scripts intact but also have the new folder where you make changes. Using Git, this is called branching and it is better than separate folders because 1) it uses a fraction of the space on your computer, 2) keeps a record of when you made the parallel copy (branch) and what you have done on the branch, and 3) there is a way to incorporate those changes back into your main code if you decide to keep your changes (and a way to deal with conflicts). By default, your repository will start with one branch, usually called ``master''. To create a new branch in your repository, type \verb|git branch new_branch_name|. You can see what branches a current repository has by typing \verb|git branch|, with the branch you are currently in being marked by a star. To move between branches, type \verb|git checkout branch_to_move_to|. You can edit files and commit them on each branch separately. If you want combine the changes in your new branch with the master branch, you can merge the branches by typing \verb|git merge new_branch_name| while in the master branch.
 
-  
+
 
 
 \subsection{Figure Legends}
