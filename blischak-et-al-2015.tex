@@ -130,7 +130,7 @@ $ git config --global user.email "user@domain"
 \end{verbatim}
 
 To start versioning your code with Git, navigate to your newly created directory, \verb|~/thesis|.
-Run the command \verb|git init| to initialize the current folder as a Git repository (Figure \ref{fig:Fig1}, \ref{fig:Fig2}A).
+Run the command \verb|git init| to initialize the current folder as a Git repository (Fig. \ref{fig:Fig1}, \ref{fig:Fig2}A).
 A repository (or repo, for short) refers to the current version of the tracked files as well as all the previously saved versions (Box 1).
 Only files that are located within this directory (and any subdirectories) have the potential to be version controlled,
 i.e. Git ignores all files outside of the initialized directory.
@@ -145,11 +145,11 @@ $ git init
 Initialized empty Git repository in ~/thesis/.git/
 \end{verbatim}
 
-Now you are ready to start versioning your code (Figure \ref{fig:Fig1}).
+Now you are ready to start versioning your code (Fig. \ref{fig:Fig1}).
 Conceptually, Git saves snapshots of the changes you make to your files whenever you instruct it to.
 For instance, after you edit a script in your text editor, you save the updated script to your \verb|thesis| folder.
 If you tell Git to save a shapshot of the updated document, then you will have a permanent record of the file in that exact version even if you make subsequent edits to the file.
-In the Git framework, any changes you have made to a script, but have not yet recorded as a snapshot with Git, reside in the working directory only (Figure \ref{fig:Fig1}).
+In the Git framework, any changes you have made to a script, but have not yet recorded as a snapshot with Git, reside in the working directory only (Fig. \ref{fig:Fig1}).
 To follow what Git is doing as you record the initial version of your files, use the informative command \verb|git status|.
 
 \begin{verbatim}
@@ -202,7 +202,7 @@ Untracked files:
 
 Since this is the first time that you have told Git about the file \verb|process.sh|, two key things have happened.
 First, this file is now being tracked, which means Git recognizes it as a file you wish to be version controlled (Box 1).
-Second, the changes made to the file (in this case the entire file because it is the first commit) have been added to the staging area (Figure \ref{fig:Fig1}).
+Second, the changes made to the file (in this case the entire file because it is the first commit) have been added to the staging area (Fig. \ref{fig:Fig1}).
 Adding a file to the staging area will result in the changes to that file being included in the next commit, or snapshot of the code (Box 1).
 As an analogy, adding files to the staging area is like putting things in a box to mail off, and committing is like putting the box in the mail.
 
@@ -223,7 +223,7 @@ Notice the flag \verb|-m| was used to pass a message for the commit.
 This message describes the changes that have been made to the code and is required.
 If you do not pass a message at the command line, the default text editor for your system will open so you can enter the message.
 You have just performed the typical development cycle with Git:
-make some changes, add updated files to the staging area, and commit the changes as a snapshot once you are satisfied with them (Figure \ref{fig:Fig2}).
+make some changes, add updated files to the staging area, and commit the changes as a snapshot once you are satisfied with them (Fig. \ref{fig:Fig2}).
 
 Since Git records all of the commits, you can always look through the complete history of a project.
 To view the record of your commits, use the command \verb|git log|.
@@ -288,7 +288,7 @@ $ git status
 no changes added to commit (use "git add" and/or "git commit -a")
 \end{verbatim}
 
-The report from \verb|git status| indicates that the changes to \verb|clean.py| are not staged, i.e. they are in the working directory (Figure 1).
+The report from \verb|git status| indicates that the changes to \verb|clean.py| are not staged, i.e. they are in the working directory (Fig. 1).
 To view the unstaged changes, run the command \verb|git diff|.
 
 \begin{verbatim}
@@ -337,7 +337,7 @@ Now you will always be able to recreate past results that were generated with pr
 
 \subsection*{Share your code}
 
-Once you have your files saved in a Git repository, you can share it with your collaborators and the wider scientific community by putting your code online (Figure \ref{fig:Fig3}).
+Once you have your files saved in a Git repository, you can share it with your collaborators and the wider scientific community by putting your code online (Fig. \ref{fig:Fig3}).
 This also has the added benefit of creating a backup of your scripts and provides a mechanism for transferring your files across multiple computers.
 Sharing a repository is made easier if you use one of the many online services that host Git repositories (Table 1), e.g. GitHub.
 Note, however, that any files that have not been tracked with at least one commit are not included in the Git repository, even if they are located within the same directory on your local computer (see Box 2 for advice on the types of files that should not be versioned with Git and Box 3 for advice on managing large files).
@@ -348,7 +348,7 @@ For quick advice on these subjects, see Box 4 on how to license your code, Box 5
 
 To begin using GitHub, you will first need to sign up for an account.
 For the code examples in this tutorial, you will need to replace \verb|username| with the username of your account.
-Next choose the option to ``Create a new repository'' (Figure \ref{fig:Fig3}B, see \href{https://help.github.com/articles/create-a-repo/}{help.github.com/articles/create-a-repo}).
+Next choose the option to ``Create a new repository'' (Fig. \ref{fig:Fig3}B, see \href{https://help.github.com/articles/create-a-repo/}{help.github.com/articles/create-a-repo}).
 Call it ``thesis'' because that is the directory name containing the files on your computer, but note that you can give it a different name on GitHub if you wish.
 Also, now that the code will be existing in multiple places, you need to learn some more terminology (Box 1).
 A local repository refers to code that is stored on the machine you are using, e.g. your laptop; whereas, a remote repository refers to the code that is hosted online.
@@ -359,7 +359,7 @@ The key to this is the URL that GitHub assigns your newly created remote reposit
 It will have the form \verb|https://github.com/username/thesis.git| (see \href{https://help.github.com/articles/cloning-a-repository/}{help.github.com/articles/cloning-a-repository}).
 Notice that this URL is using the HTTPS protocol, which is the quickest to begin using.
 However it requires you to enter your username and password when communicating with GitHub, so you'll want to considering switching to the SSH protocol once you are regularly using Git and GitHub (see \href{https://help.github.com/articles/generating-ssh-keys/}{help.github.com/articles/generating-ssh-keys} for directions).
-In order to link the local thesis repository on your computer to the remote repository you just created, in your local repository you need to tell Git the URL of the remote repository using the command \verb|git remote add| (Figure \ref{fig:Fig3}C).
+In order to link the local thesis repository on your computer to the remote repository you just created, in your local repository you need to tell Git the URL of the remote repository using the command \verb|git remote add| (Fig. \ref{fig:Fig3}C).
 
 \begin{verbatim}
 $ git remote add origin https://github.com/username/thesis.git
@@ -367,7 +367,7 @@ $ git remote add origin https://github.com/username/thesis.git
 
 The name ``origin'' is a bookmark for the remote repository so that you do not have to type out the full URL every time you transfer your changes (this is the default name for a remote repository, but you could use another name if you like).
 
-Send your code to GitHub using the command \verb|git push| (Figure \ref{fig:Fig3}D).
+Send your code to GitHub using the command \verb|git push| (Fig. \ref{fig:Fig3}D).
 
 \begin{verbatim}
 $ git push origin master
@@ -408,7 +408,7 @@ With the addition of a GitHub account and a few commands for sending and receivi
 \subsection*{Contribute to other projects}
 
 Lots of scientific software is hosted online in Git repositories.
-Now that you know the basics of Git, you can directly contribute to developing the scientific software you use for your research (Figure \ref{fig:Fig4}).
+Now that you know the basics of Git, you can directly contribute to developing the scientific software you use for your research (Fig. \ref{fig:Fig4}).
 From a small contribution like fixing a typo in the documentation to a larger change such as fixing a bug, it is empowering to be able to improve the software used by you and many other scientists.
 
 When contributing to a larger project with many contributors, you will not be able to push your changes with \verb|git push| directly to the project's remote repository.
@@ -417,21 +417,21 @@ You can fork any repository on GitHub by clicking the button ``Fork'' on the top
 
 Once you have a fork of a project's repository, you can clone it to your computer and make changes just like a repository you created yourself.
 As an exercise, you will add a file to the repository that we used to write this paper.
-First, go to \href{https://github.com/jdblischak/git-for-science}{github.com/jdblischak/git-for-science} and choose the ``Fork'' option to create a git-for-science repository under your GitHub account (Figure \ref{fig:Fig4}B).
-In order to make changes, download it to your computer with the command \verb|git clone| from the directory you wish the repo to appear in (Figure \ref{fig:Fig4}C).
+First, go to \href{https://github.com/jdblischak/git-for-science}{github.com/jdblischak/git-for-science} and choose the ``Fork'' option to create a git-for-science repository under your GitHub account (Fig. \ref{fig:Fig4}B).
+In order to make changes, download it to your computer with the command \verb|git clone| from the directory you wish the repo to appear in (Fig. \ref{fig:Fig4}C).
 
 \begin{verbatim}
 $ git clone https://github.com/username/git-for-science.git
 \end{verbatim}
 
-Now that you have a local version, navigate to the subdirectory \verb|readers| and create a text file named as your GitHub username (Figure \ref{fig:Fig4}D).
+Now that you have a local version, navigate to the subdirectory \verb|readers| and create a text file named as your GitHub username (Fig. \ref{fig:Fig4}D).
 
 \begin{verbatim}
 $ cd git-for-science/readers
 $ touch username.txt
 \end{verbatim}
 
-Add and commit this new file (Figure \ref{fig:Fig4}D), and then push the changes back to your remote repository on GitHub (Figure \ref{fig:Fig4}E).
+Add and commit this new file (Fig. \ref{fig:Fig4}D), and then push the changes back to your remote repository on GitHub (Fig. \ref{fig:Fig4}E).
 
 \begin{verbatim}
 $ git add username.txt
@@ -440,7 +440,7 @@ $ git push origin master
 \end{verbatim}
 
 Currently, the new file you created, \verb|readers/username.txt|, only exists in your fork of git-for-science.
-To merge this file into the main repository, send a pull request using the GitHub interface (Pull request -\textgreater New pull request -\textgreater Create pull request; Figure \ref{fig:Fig4}F; see \href{https://help.github.com/articles/using-pull-requests/}{help.github.com/articles/using-pull-requests}).
+To merge this file into the main repository, send a pull request using the GitHub interface (Pull request -\textgreater New pull request -\textgreater Create pull request; Fig. \ref{fig:Fig4}F; see \href{https://help.github.com/articles/using-pull-requests/}{help.github.com/articles/using-pull-requests}).
 After the pull request is created, we can review your change and then merge it into the main repository.
 Although this process of forking a project’s repository and issuing a pull request seems like a lot of work to contribute changes, this workflow gives the owner of a project control over what changes get incorporated into the code.
 You can have others contribute to your projects using the same workflow.
@@ -454,9 +454,9 @@ Git, albeit complicated at first, is a powerful tool that can improve code devel
 Ultimately the complexity of a VCS not only gives users a well-documented ``undo'' button for their analyses, but it also allows for collaboration and sharing of code on a massive scale.
 Furthermore, it does not need to be learned in its entirety to be useful.
 Instead, you can derive tangible benefits from adopting version control in stages.
-With a few commands (\verb|git init|, \verb|git add|, \verb|git commit|), you can start tracking your code development and avoid a filesystem full of copied files (Figure \ref{fig:Fig2}).
-Adding a few additional commands (\verb|git push|, \verb|git clone|, \verb|git pull|) and a GitHub account, you can share your code online, transfer your changes across machines, and collaborate in small groups (Figure \ref{fig:Fig3}).
-Lastly, by forking public repositories and sending pull requests, you can directly improve scientific software (Figure \ref{fig:Fig4}).
+With a few commands (\verb|git init|, \verb|git add|, \verb|git commit|), you can start tracking your code development and avoid a filesystem full of copied files (Fig. \ref{fig:Fig2}).
+Adding a few additional commands (\verb|git push|, \verb|git clone|, \verb|git pull|) and a GitHub account, you can share your code online, transfer your changes across machines, and collaborate in small groups (Fig. \ref{fig:Fig3}).
+Lastly, by forking public repositories and sending pull requests, you can directly improve scientific software (Fig. \ref{fig:Fig4}).
 
 
 \subsection*{Methods}

@@ -1,6 +1,6 @@
 \subsection*{Share your code}
 
-Once you have your files saved in a Git repository, you can share it with your collaborators and the wider scientific community by putting your code online (Figure \ref{fig:Fig3}).
+Once you have your files saved in a Git repository, you can share it with your collaborators and the wider scientific community by putting your code online (Fig. \ref{fig:Fig3}).
 This also has the added benefit of creating a backup of your scripts and provides a mechanism for transferring your files across multiple computers.
 Sharing a repository is made easier if you use one of the many online services that host Git repositories (Table 1), e.g. GitHub.
 Note, however, that any files that have not been tracked with at least one commit are not included in the Git repository, even if they are located within the same directory on your local computer (see Box 2 for advice on the types of files that should not be versioned with Git and Box 3 for advice on managing large files).
@@ -11,7 +11,7 @@ For quick advice on these subjects, see Box 4 on how to license your code, Box 5
 
 To begin using GitHub, you will first need to sign up for an account.
 For the code examples in this tutorial, you will need to replace \verb|username| with the username of your account.
-Next choose the option to ``Create a new repository'' (Figure \ref{fig:Fig3}B, see \href{https://help.github.com/articles/create-a-repo/}{help.github.com/articles/create-a-repo}).
+Next choose the option to ``Create a new repository'' (Fig. \ref{fig:Fig3}B, see \href{https://help.github.com/articles/create-a-repo/}{help.github.com/articles/create-a-repo}).
 Call it ``thesis'' because that is the directory name containing the files on your computer, but note that you can give it a different name on GitHub if you wish.
 Also, now that the code will be existing in multiple places, you need to learn some more terminology (Box 1).
 A local repository refers to code that is stored on the machine you are using, e.g. your laptop; whereas, a remote repository refers to the code that is hosted online.
@@ -22,7 +22,7 @@ The key to this is the URL that GitHub assigns your newly created remote reposit
 It will have the form \verb|https://github.com/username/thesis.git| (see \href{https://help.github.com/articles/cloning-a-repository/}{help.github.com/articles/cloning-a-repository}).
 Notice that this URL is using the HTTPS protocol, which is the quickest to begin using.
 However it requires you to enter your username and password when communicating with GitHub, so you'll want to considering switching to the SSH protocol once you are regularly using Git and GitHub (see \href{https://help.github.com/articles/generating-ssh-keys/}{help.github.com/articles/generating-ssh-keys} for directions).
-In order to link the local thesis repository on your computer to the remote repository you just created, in your local repository you need to tell Git the URL of the remote repository using the command \verb|git remote add| (Figure \ref{fig:Fig3}C).
+In order to link the local thesis repository on your computer to the remote repository you just created, in your local repository you need to tell Git the URL of the remote repository using the command \verb|git remote add| (Fig. \ref{fig:Fig3}C).
 
 \begin{verbatim}
 $ git remote add origin https://github.com/username/thesis.git
@@ -30,7 +30,7 @@ $ git remote add origin https://github.com/username/thesis.git
 
 The name ``origin'' is a bookmark for the remote repository so that you do not have to type out the full URL every time you transfer your changes (this is the default name for a remote repository, but you could use another name if you like).
 
-Send your code to GitHub using the command \verb|git push| (Figure \ref{fig:Fig3}D).
+Send your code to GitHub using the command \verb|git push| (Fig. \ref{fig:Fig3}D).
 
 \begin{verbatim}
 $ git push origin master
