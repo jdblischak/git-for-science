@@ -77,6 +77,34 @@ for line in version_file:
 sys.stdout.write("\n")
 
 ################################################################################
+# Table
+################################################################################
+
+table_file = open("table-1-resources.tex", "r")
+# Ignore subsection macro
+table_file.readline()
+#
+sys.stdout.write("""
+\\begin{table}[!ht]
+\\begin{adjustwidth}{-1.25in}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
+\\caption{
+{\\bf Resources.}}
+"""
+)
+
+for line in table_file:
+    sys.stdout.write(line)
+
+sys.stdout.write("""
+\label{resources}
+\end{adjustwidth}
+\end{table}
+"""
+)
+
+sys.stdout.write("\n")
+
+################################################################################
 # Share your code
 ################################################################################
 
