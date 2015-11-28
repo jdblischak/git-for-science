@@ -4,17 +4,28 @@
 #
 # python build-full-article.py > blischak-et-al.tex
 
+################################################################################
+# Setup
+################################################################################
+
 import sys
 import textwrap
+
+def write_file(fname, blankline = 1):
+    handle = open(fname, "r")
+    for line in handle:
+        if "Table 1" in line:
+            line = line.replace("Table 1", "Table \\ref{resources}")
+        sys.stdout.write(line)
+    handle.close()
+    sys.stdout.write("\n" * blankline)
+
 
 ################################################################################
 # Add header
 ################################################################################
 
-header_file = open("header-local.tex", "r")
-for line in header_file:
-    sys.stdout.write(line)
-sys.stdout.write("\n")
+write_file("header-local.tex")
 
 ################################################################################
 # Begin document
@@ -62,19 +73,13 @@ sys.stdout.write(r"\end{flushleft}" + "\n\n")
 
 sys.stdout.write(r"\linenumbers" + "\n\n")
 
-intro_file = open("introduction.tex", "r")
-for line in intro_file:
-    sys.stdout.write(line)
-sys.stdout.write("\n")
+write_file("introduction.tex")
 
 ################################################################################
 # Version your code
 ################################################################################
 
-version_file = open("version-your-code.tex", "r")
-for line in version_file:
-    sys.stdout.write(line)
-sys.stdout.write("\n")
+write_file("version-your-code.tex")
 
 ################################################################################
 # Table
@@ -108,37 +113,25 @@ sys.stdout.write("\n")
 # Share your code
 ################################################################################
 
-share_file = open("share-your-code.tex", "r")
-for line in share_file:
-    sys.stdout.write(line)
-sys.stdout.write("\n")
+write_file("share-your-code.tex")
 
 ################################################################################
 # Contribute to other projects
 ################################################################################
 
-contribute_file = open("contribute-to-other-projects.tex", "r")
-for line in contribute_file:
-    sys.stdout.write(line)
-sys.stdout.write("\n")
+write_file("contribute-to-other-projects.tex")
 
 ################################################################################
 # Conclusion
 ################################################################################
 
-conclusion_file = open("conclusion.tex", "r")
-for line in conclusion_file:
-    sys.stdout.write(line)
-sys.stdout.write("\n")
+write_file("conclusion.tex")
 
 ################################################################################
 # Methods
 ################################################################################
 
-methods_file = open("methods.tex", "r")
-for line in methods_file:
-    sys.stdout.write(line)
-sys.stdout.write("\n")
+write_file("methods.tex")
 
 ################################################################################
 # References
