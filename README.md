@@ -26,6 +26,24 @@ If you haven't contributed already, we'd love to see your PR!
 The example code, which were provided as supplementary files, can be found in the sudirectory `code`.
 If you're interested in running the scripts, please see the [README](code/README.md) in that directory for instructions.
 
+## Build the document
+
+The full tex file and compiled PDF can be obtained from the "Export document" on the [Authorea page][authorea-page] for this article.
+Choose the PLOS 2015 template for the best results.
+
+However, to both maintain a presentable version for display on Authorea (e.g. contain the figures) and a version that complies with the [PLOS submission guidelines][plos-submit] (e.g. only contain figure captions but not images), we created a [custom Python script](build-full-article.py) to build the final [TEX](blischak-et-al.tex) and [PDF](blischak-et-al.pdf) files for submission.
+Run it as follows:
+
+```python
+python build-full-article.py > blischak-et-al.py
+```
+
+You should be able to run it with either major version of Python.
+We were able to run it with either Python 2.7.10 or Python 3.4.3.
+
+[authorea-page]: https://www.authorea.com/users/5990/articles/17489
+[plos-submit]: http://journals.plos.org/plosone/s/latex
+
 ## Contributors
 
 Thank you to all of our [contributors](https://github.com/jdblischak/git-for-science/graphs/contributors)!

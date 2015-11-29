@@ -1,5 +1,7 @@
+% header file used for building locally
+
 % Template for PLoS
-% Version 1.0 January 2009
+% Version 3.1 February 2015
 %
 % To compile to pdf, run:
 % latex plos.template
@@ -7,77 +9,183 @@
 % latex plos.template
 % latex plos.template
 % dvipdf plos.template
+%
+% % % % % % % % % % % % % % % % % % % % % %
+%
+% -- IMPORTANT NOTE
+%
+% This template contains comments intended
+% to minimize problems and delays during our production
+% process. Please follow the template instructions
+% whenever possible.
+%
+% % % % % % % % % % % % % % % % % % % % % % %
+%
+% Once your paper is accepted for publication,
+% PLEASE REMOVE ALL TRACKED CHANGES in this file and leave only
+% the final text of your manuscript.
+%
+% There are no restrictions on package use within the LaTeX files except that
+% no packages listed in the template may be deleted.
+%
+% Please do not include colors or graphics in the text.
+%
+% Please do not create a heading level below \subsection. For 3rd level headings, use \paragraph{}.
+%
+% % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- FIGURES AND TABLES
+%
+% Please include tables/figure captions directly after the paragraph where they are first cited in the text.
+%
+% DO NOT INCLUDE GRAPHICS IN YOUR MANUSCRIPT
+% - Figures should be uploaded separately from your manuscript file.
+% - Figures generated using LaTeX should be extracted and removed from the PDF before submission.
+% - Figures containing multiple panels/subfigures must be combined into one image file before submission.
+% For figure citations, please use "Fig." instead of "Figure".
+% See http://www.plosone.org/static/figureGuidelines for PLOS figure guidelines.
+%
+% Tables should be cell-based and may not contain:
+% - tabs/spacing/line breaks within cells to alter layout or alignment
+% - vertically-merged cells (no tabular environments within tabular environments, do not use \multirow)
+% - colors, shading, or graphic objects
+% See http://www.plosone.org/static/figureGuidelines#tables for table guidelines.
+%
+% For tables that exceed the width of the text column, use the adjustwidth environment as illustrated in the example table in text below.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- EQUATIONS, MATH SYMBOLS, SUBSCRIPTS, AND SUPERSCRIPTS
+%
+% IMPORTANT
+% Below are a few tips to help format your equations and other special characters according to our specifications. For more tips to help reduce the possibility of formatting errors during conversion, please see our LaTeX guidelines at http://www.plosone.org/static/latexGuidelines
+%
+% Please be sure to include all portions of an equation in the math environment.
+%
+% Do not include text that is not math in the math environment. For example, CO2 will be CO\textsubscript{2}.
+%
+% Please add line breaks to long display equations when possible in order to fit size of the column.
+%
+% For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+%
+% Please contact latex@plos.org with any questions.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
 
-\documentclass[10pt]{article}
+\documentclass[10pt,letterpaper]{article}
+\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
 
-\usepackage{graphicx}
-\usepackage[space]{grffile}
-\usepackage{latexsym}
-\usepackage{textcomp}
-\usepackage{longtable}
-\usepackage{multirow,booktabs}
-\usepackage{amsfonts,amsmath,amssymb}
-\usepackage{url}
-\usepackage{hyperref}
-\hypersetup{colorlinks=false,pdfborder={0 0 0}}
-\usepackage{latexml}
+% Use adjustwidth environment to exceed column width (see example table in text)
+\usepackage{changepage}
+
+% Use Unicode characters when possible
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
+
+% textcomp package and marvosym package for additional characters
+\usepackage{textcomp,marvosym}
+
+% fixltx2e package for \textsubscript
+\usepackage{fixltx2e}
+
+% amsmath and amssymb packages, useful for mathematical formulas and symbols
+\usepackage{amsmath,amssymb}
 
 % cite package, to clean up citations in the main text. Do not remove.
 \usepackage{cite}
 
-% Use doublespacing - comment out for single spacing
+% Use nameref to cite supporting information files (see Supporting Information section for more info)
+\usepackage{nameref,hyperref}
+
+% line numbers
+\usepackage[right]{lineno}
+
+% ligatures disabled
+\usepackage{microtype}
+\DisableLigatures[f]{encoding = *, family = * }
+
+% rotating package for sideways tables
+\usepackage{rotating}
+
+% include \verb macros in \caption of figures
+% http://tex.stackexchange.com/a/8814
+\usepackage{cprotect}
+
+% Remove comment for double spacing
 %\usepackage{setspace}
 %\doublespacing
+
+% Text layout
+\raggedright
+\setlength{\parindent}{0.5cm}
+\textwidth 5.25in
+\textheight 8.75in
+
+% Bold the 'Figure #' in the caption and separate it from the title/caption with a period
+% Captions will be left justified
+\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
+
+% Use the PLoS provided BiBTeX style
+\bibliographystyle{plos2015}
 
 % Remove brackets from numbering in List of References
 \makeatletter
 \renewcommand{\@biblabel}[1]{\quad#1.}
 \makeatother
 
-% Text layout
-\topmargin 0.0cm
-\oddsidemargin 0.5cm
-\evensidemargin 0.5cm
-\textwidth 16cm
-\textheight 21cm
-
-% Bold the 'Figure #' in the caption and separate it with a period
-% Captions will be left justified
-\usepackage[labelfont=bf,labelsep=period,justification=raggedright]{caption}
-
-% Use the PLoS provided bibtex style
-\bibliographystyle{plos2009}
-
 % Leave date blank
 \date{}
 
+% Header and Footer with logo
+\usepackage{lastpage,fancyhdr,graphicx}
+\usepackage{epstopdf}
 \pagestyle{myheadings}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\includegraphics[width=2.0in]{PLOS-submission.eps}}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
+\fancyheadoffset[L]{2.25in}
+\fancyfootoffset[L]{2.25in}
+\lfoot{\sf PLOS}
+
+%% Include all macros below
+
+\newcommand{\lorem}{{\bf LOREM}}
+\newcommand{\ipsum}{{\bf IPSUM}}
+
+%% END MACROS SECTION
+
 \begin{document}
+\vspace*{0.35in}
 
-% Title must be 150 characters or less
 \begin{flushleft}
-{\LARGE
-\textbf{A quick introduction to version control with Git and GitHub}
+{\Large
+\textbf\newline{A quick introduction to version control with Git and GitHub}
 }
-% Insert Author names, affiliations and corresponding author email.
+\newline
+% Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
 \\
-
-\href{https://www.authorea.com/users/5990}{John D. Blischak}(1), \href{https://www.authorea.com/users/16152}{Emily R. Davenport}(2), \href{https://www.authorea.com/users/18131}{Greg Wilson}(3)\\
-
-(1) Committee on Genetics, Genomics, and Systems Biology, University of Chicago, Chicago, IL, USA\\
-(2) Department of Molecular Biology and Genetics, Cornell University, Ithaca, NY, USA\\
-(3) Software Carpentry Foundation, Toronto, Ontario, Canada
+John D. Blischak\textsuperscript{1,*},
+Emily R. Davenport\textsuperscript{2},
+Greg Wilson\textsuperscript{3}
+\\
+\bigskip
+\bf{1} Committee on Genetics, Genomics, and Systems Biology, University of Chicago, Chicago, IL, USA
+\\
+\bf{2} Department of Molecular Biology and Genetics, Cornell University, Ithaca, NY, USA
+\\
+\bf{3} Software Carpentry Foundation, Toronto, Ontario, Canada
+\\
+\bigskip
+* jdblischak@gmail.com
 
 \end{flushleft}
 
-% Please keep the abstract between 250 and 300 words
+\linenumbers
 
-
-
-
-\subsection*{Introduction to version control}
+\section*{Introduction to version control}
 
 Many scientists write code as part of their research.
 Just as experiments are logged in laboratory notebooks, it is important to document the code you use for analysis.
@@ -103,31 +211,32 @@ Furthermore, not only does using a VCS solve many common problems when writing c
 By tracking your code development with a VCS and hosting it online, you are performing science that is more transparent, reproducible, and open to collaboration \cite{23448176, 24415924}.
 There is no reason this framework needs to be limited only to code; a VCS is well-suited for tracking any plain-text files: manuscripts, electronic lab notebooks, protocols, etc.
 
-
-\subsection*{Version your code}
+\section*{Version your code}
 
 The first step is to learn how to version your own code.
 In this tutorial, we will run Git from the command line of the Unix shell.
 Thus we expect readers are already comfortable with navigating a filesystem and running basic commands in such an environment.
-You can find directions for installing Git for the operating system running on your computer by following one of the links provided in Table 1.
-There are many graphical user interfaces (GUIs) available for running Git (Table 1), which we encourage you to explore, but learning to use Git on the command line is necessary for performing more advanced operations and using Git on a remote machine.
+You can find directions for installing Git for the operating system running on your computer by following one of the links provided in Table \ref{tab:resources}.
+There are many graphical user interfaces (GUIs) available for running Git (Table \ref{tab:resources}), which we encourage you to explore, but learning to use Git on the command line is necessary for performing more advanced operations and using Git on a remote machine.
 
 To follow along, first create a folder in your home directory named \verb|thesis|.
 Next download the three files provided in Supporting Information and place them in the \verb|thesis| directory.
 Imagine that as part of your thesis you are studying the transcription factor CTCF, and you want to identify high-confidence binding sites in kidney epithelial cells.
 To do this, you will utilize publicly available ChIP-seq data produced by the ENCODE consortium \cite{22955616}.
 ChIP-seq is a method for finding the sites in the genome where a transcription factor is bound, and these sites are referred to as peaks \cite{24244136}.
-\verb|process.sh| downloads the ENCODE CTCF ChIP-seq data from multiple types of kidney samples and calls peaks,
-\verb|clean.py| filters peaks with a fold change cutoff and merges peaks from the different kidney samples,
-and \verb|analyze.R| creates diagnostic plots on the length of the peaks and their distribution across the genome.
+\verb|process.sh| downloads the ENCODE CTCF ChIP-seq data from multiple types of kidney samples and calls peaks (\nameref{S1_Data}),
+\verb|clean.py| filters peaks with a fold change cutoff and merges peaks from the different kidney samples (\nameref{S2_Data}),
+and \verb|analyze.R| creates diagnostic plots on the length of the peaks and their distribution across the genome (\nameref{S3_Data}).
 
 If you have just installed Git, the first thing you need to do is provide some information about yourself, since it records who makes each change to the file(s).
 Set your name and email by running the following lines, but replacing ``First Last'' and ``user@domain'' with your full name and email address, respectively.
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git config --global user.name "First Last"
 $ git config --global user.email "user@domain"
 \end{verbatim}
+\end{adjustwidth}
 
 To start versioning your code with Git, navigate to your newly created directory, \verb|~/thesis|.
 Run the command \verb|git init| to initialize the current folder as a Git repository (Fig. \ref{fig:Fig1}, \ref{fig:Fig2}A).
@@ -137,6 +246,7 @@ i.e. Git ignores all files outside of the initialized directory.
 For this reason, projects under version control tend to be stored within a single directory to correspond with a single Git repository.
 For strategies on how to best organize your own projects, see Noble, 2009 \cite{19649301}.
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ cd ~/thesis
 $ ls
@@ -144,6 +254,7 @@ analyze.R clean.py process.sh
 $ git init
 Initialized empty Git repository in ~/thesis/.git/
 \end{verbatim}
+\end{adjustwidth}
 
 Now you are ready to start versioning your code (Fig. \ref{fig:Fig1}).
 Conceptually, Git saves snapshots of the changes you make to your files whenever you instruct it to.
@@ -152,6 +263,7 @@ If you tell Git to save a shapshot of the updated document, then you will have a
 In the Git framework, any changes you have made to a script, but have not yet recorded as a snapshot with Git, reside in the working directory only (Fig. \ref{fig:Fig1}).
 To follow what Git is doing as you record the initial version of your files, use the informative command \verb|git status|.
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git status
 On branch master
@@ -167,6 +279,7 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 \end{verbatim}
+\end{adjustwidth}
 
 There are a few key things to notice from this output.
 First, the three scripts are recognized as untracked files because you have not told Git to start tracking anything yet.
@@ -176,12 +289,15 @@ This word can also be used as a verb, in which case it means ``to save'', e.g. `
 Lastly, the output explains how you can track your files using \verb|git add|.
 Start tracking the file \verb|process.sh|.
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git add process.sh
 \end{verbatim}
+\end{adjustwidth}
 
 And check its new status.
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git status
 On branch master
@@ -199,6 +315,7 @@ Untracked files:
         analyze.R
         clean.py
 \end{verbatim}
+\end{adjustwidth}
 
 Since this is the first time that you have told Git about the file \verb|process.sh|, two key things have happened.
 First, this file is now being tracked, which means Git recognizes it as a file you wish to be version controlled (Box 1).
@@ -209,6 +326,7 @@ As an analogy, adding files to the staging area is like putting things in a box 
 Since this will be the first commit, or first version of the code, use \verb|git add| to begin tracking the other two files and add their changes to the staging area as well.
 Then create the first commit using the command \verb|git commit|.
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git add clean.py analyze.R
 $ git commit -m "Add initial version of thesis code."
@@ -218,6 +336,7 @@ $ git commit -m "Add initial version of thesis code."
  create mode 100644 clean.py
  create mode 100644 process.sh
 \end{verbatim}
+\end{adjustwidth}
 
 Notice the flag \verb|-m| was used to pass a message for the commit.
 This message describes the changes that have been made to the code and is required.
@@ -229,6 +348,7 @@ Since Git records all of the commits, you can always look through the complete h
 To view the record of your commits, use the command \verb|git log|.
 For each commit, it lists the unique identifier for that revision, author, date, and commit message.
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git log
 commit 660213b91af167d992885e45ab19f585f02d4661
@@ -237,6 +357,7 @@ Date:   Fri Aug 21 14:52:05 2015 -0500
 
     Add initial version of thesis code.
 \end{verbatim}
+\end{adjustwidth}
 
 The commit identifier can be used to compare two different versions of a file, restore a file to a previous version from a past commit, and even retrieve tracked files if you accidentally delete them.
 
@@ -244,6 +365,7 @@ Now you are free to make changes to the files knowing that you can always revert
 As an example, edit \verb|clean.py| so that the fold change cutoff for filtering peaks is more stringent.
 Here is the current bottom of the file.
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ tail clean.py
 # Filter based on fold-change over control sample
@@ -257,9 +379,11 @@ combined = pybedtools.BedTool().multi_intersect(
 union = combined.filter(lambda x: int(x[3]) == 3).saveas()
 union.cut(range(3)).saveas(data + "/sites-union.bed")
 \end{verbatim}
+\end{adjustwidth}
 
 Using a text editor, increase the fold change cutoff from 10 to 20.
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ tail clean.py
 # Filter based on fold-change over control sample
@@ -273,9 +397,11 @@ combined = pybedtools.BedTool().multi_intersect(
 union = combined.filter(lambda x: int(x[3]) == 3).saveas()
 union.cut(range(3)).saveas(data + "/sites-union.bed")
 \end{verbatim}
+\end{adjustwidth}
 
 Because Git is tracking \verb|clean.py|, it recognizes that the file has been changed since the last commit.
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git status
 # On branch master
@@ -287,10 +413,12 @@ $ git status
 #
 no changes added to commit (use "git add" and/or "git commit -a")
 \end{verbatim}
+\end{adjustwidth}
 
-The report from \verb|git status| indicates that the changes to \verb|clean.py| are not staged, i.e. they are in the working directory (Fig. 1).
+The report from \verb|git status| indicates that the changes to \verb|clean.py| are not staged, i.e. they are in the working directory (Fig. \ref{fig:Fig1}).
 To view the unstaged changes, run the command \verb|git diff|.
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git diff
 diff --git a/clean.py b/clean.py
@@ -307,6 +435,7 @@ index 7b8c058..76d84ce 100644
  proximal_tube = proximal_tube.filter(filter_fold_change, fc = fc_cutoff).saveas()
  kidney = kidney.filter(filter_fold_change, fc = fc_cutoff).saveas()
 \end{verbatim}
+\end{adjustwidth}
 
 Any lines of text that have been added to the script are indicated with a \verb|+| and any lines that have been removed with a \verb|-|.
 Here, we altered the line of code which sets the value of \verb|fc_cutoff|.
@@ -315,10 +444,12 @@ You can ignore the first five lines of output because they are directions for ot
 If you wanted to keep this edit, you could add \verb|clean.py| to the staging area using \verb|git add| and then commit the change using \verb|git commit|, as you did above.
 Instead, this time undo the edit by following the directions from the output of \verb|git status| to ``discard changes in the working directory'' using the command \verb|git checkout|.
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git checkout -- clean.py
 $ git diff
 \end{verbatim}
+\end{adjustwidth}
 
 Now \verb|git diff| returns no output because \verb|git checkout| undid the unstaged edit you had made to \verb|clean.py|.
 And this ability to undo past edits to a file is not limited to unstaged changes in the working directory.
@@ -326,20 +457,73 @@ If you had committed multiple changes to the file \verb|clean.py| and then decid
 The \verb|--| used above was simply a placeholder for the first argument because by default \verb|git checkout| restores the most recent version of the file from the staging area (if you haven't staged any changes to this file, as is the case here, the version of the file in the staging area is identical to the version in the last commit).
 Instead of using the entire commit identifier, use only the first seven characters, which is simply a convention since this is usually long enough for it to be unique.
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git checkout 660213b clean.py
 \end{verbatim}
+\end{adjustwidth}
 
 At this point, you have learned the commands needed to version your code with Git.
 Thus you already have the benefits of being able to make edits to files without copying them first, to create a record of your changes with accompanying messages, and to revert to previous versions of the files if needed.
 Now you will always be able to recreate past results that were generated with previous versions of the code (see the command \verb|git tag| for a method to facilitate finding specific past versions) and see the exact changes you have made over the course of a project.
 
 
-\subsection*{Share your code}
+\begin{table}[!ht]
+\begin{adjustwidth}{-1.25in}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
+\caption{
+{\bf Resources.}}
+
+\begin{tabular}{|l|l|}
+    \hline
+    \textbf{Resource} & \textbf{Options} \\ \hline
+    Distibuted VCS & Git (\href{https://git-scm.com}{git-scm.com}) \\ \hline
+                   & Mercurial (\href{https://mercurial.selenic.com}{mercurial.selenic.com}) \\ \hline
+                   & Bazaar (\href{http://bazaar.canonical.com}{bazaar.canonical.com}) \\ \hline
+    Online hosting site & GitHub (\href{https://github.com}{github.com}) \\ \hline
+                        & Bitbucket (\href{https://bitbucket.org}{bitbucket.org}) \\ \hline
+                        & GitLab (\href{https://about.gitlab.com}{gitlab.com}) \\ \hline
+                        & Source Forge (\href{http://sourceforge.net}{sourceforge.net}) \\ \hline
+    Git installation & \href{https://git-scm.com/downloads}{git-scm.com/downloads} \\ \hline
+    Git Tutorials & Software Carpentry(\href{https://swcarpentry.github.io/git-novice}{swcarpentry.github.io/git-novice}) \\ \hline
+                  & Pro Git (\href{https://git-scm.com/book}{git-scm.com/book}) \\ \hline
+                  & A Visual Git Reference (\href{https://marklodato.github.io/visual-git-guide}{marklodato.github.io/visual-git-guide}) \\ \hline
+                  & tryGit (\href{https://try.github.io}{try.github.io}) \\ \hline
+    Graphical User Interface for Git & \href{https://git-scm.com/downloads/guis}{git-scm.com/downloads/guis} \\ \hline
+\end{tabular}
+
+\label{tab:resources}
+\end{adjustwidth}
+\end{table}
+
+\begin{figure}[h]
+\cprotect\caption{{\bf The git add/commit process.}
+
+To store a snapshot of changes in your repository, first \verb|git add| any files to the staging area you wish to commit (for example, you've updated the \verb|process.sh| file).
+Second, type \verb|git commit| with a message. Only files added to the staging area will be committed.
+All past commits are located in the hidden \verb|.git| directory in your repository.
+}
+\label{fig:Fig1}
+\end{figure}
+
+\begin{figure}[h]
+\cprotect\caption{{\bf Working with a local repository.}
+
+A) To designate a directory on your computer as a Git repo, type the command \verb|git init|.
+This initializes the repository and will allow you to track the files located within that directory.
+B) Once you have added a file, follow the git add/commit cycle to place the new file first into the staging area by typing \verb|git add| to designate it to be committed, and then \verb|git commit| to take the shapshot of that file.
+The commit is assigned a commit identifier (d75es) that can be used in the future to pull up this version or to compare different committed versions of this file.
+C) As you continue to add and change files, you should regularly add and commit those changes.
+Here, an additional commit was done and the commit log now shows two commit identifiers: d75es (from step B) and f658t (the new commit).
+Each commit will generate a unique identifier, which can be examined in reverse chronological order using \verb|git log|.
+}
+\label{fig:Fig2}
+\end{figure}
+
+\section*{Share your code}
 
 Once you have your files saved in a Git repository, you can share it with your collaborators and the wider scientific community by putting your code online (Fig. \ref{fig:Fig3}).
 This also has the added benefit of creating a backup of your scripts and provides a mechanism for transferring your files across multiple computers.
-Sharing a repository is made easier if you use one of the many online services that host Git repositories (Table 1), e.g. GitHub.
+Sharing a repository is made easier if you use one of the many online services that host Git repositories (Table \ref{tab:resources}), e.g. GitHub.
 Note, however, that any files that have not been tracked with at least one commit are not included in the Git repository, even if they are located within the same directory on your local computer (see Box 2 for advice on the types of files that should not be versioned with Git and Box 3 for advice on managing large files).
 
 Below we focus on the technical aspects of sharing your code.
@@ -361,17 +545,21 @@ Notice that this URL is using the HTTPS protocol, which is the quickest to begin
 However it requires you to enter your username and password when communicating with GitHub, so you'll want to considering switching to the SSH protocol once you are regularly using Git and GitHub (see \href{https://help.github.com/articles/generating-ssh-keys/}{help.github.com/articles/generating-ssh-keys} for directions).
 In order to link the local thesis repository on your computer to the remote repository you just created, in your local repository you need to tell Git the URL of the remote repository using the command \verb|git remote add| (Fig. \ref{fig:Fig3}C).
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git remote add origin https://github.com/username/thesis.git
 \end{verbatim}
+\end{adjustwidth}
 
 The name ``origin'' is a bookmark for the remote repository so that you do not have to type out the full URL every time you transfer your changes (this is the default name for a remote repository, but you could use another name if you like).
 
 Send your code to GitHub using the command \verb|git push| (Fig. \ref{fig:Fig3}D).
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git push origin master
 \end{verbatim}
+\end{adjustwidth}
 
 You first specify the remote repository, ``origin''.
 Second, you tell Git to push to the ``master'' copy of the repository - we will not go into other options in this tutorial, but Box 7 discusses them briefly.
@@ -381,9 +569,11 @@ Also, it can be used to manually transfer your code across multiple machines, si
 For example, what if you wanted to work on your code on your computer at home?
 You can download the Git repository using the command \verb|git clone|.
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git clone https://github.com/username/thesis.git
 \end{verbatim}
+\end{adjustwidth}
 
 By default, this will download the Git repository into a local directory named ``thesis''.
 Furthermore, the remote ``origin'' will automatically be added so that you can easily push your changes back to GitHub.
@@ -392,9 +582,11 @@ You can make changes, commit them on your home computer, and send those commits 
 
 Then the next day back at your work computer, you could update the code with the changes you made the previous evening using the command \verb|git pull|.
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git pull origin master
 \end{verbatim}
+\end{adjustwidth}
 
 This pulls in all the commits that you had previously pushed to the GitHub remote repository from your home computer.
 In this workflow, you are essentially collaborating with yourself as you work from multiple computers.
@@ -404,8 +596,25 @@ However, with projects with lots of contributors, GitHub provides a workflow for
 
 With the addition of a GitHub account and a few commands for sending and receiving code, you can now share your code with others, transfer your code across multiple machines, and setup simple collaborative workflows.
 
+\begin{figure}[h]
+\cprotect\caption{{\bf Working with both a local and remote repository as a single user.}
 
-\subsection*{Contribute to other projects}
+A) On your computer you commit to a Git repository (commit d75es).
+B) On GitHub, you create a new repository called \verb|thesis|.
+This repository is currently empty and not linked to the repo on your local machine.
+C) The command \verb|git remote add| connects your local repository to your remote repository.
+The remote repository is still empty, however, because you have not pushed any content to it.
+D) You send all the local commits to the remote repository using the command \verb|git push|.
+Only files that have been committed will appear in the remote repository.
+E) You repeat several more rounds of updating scripts and committing on your local computer (commit f658t and then commit xv871).
+You have not yet pushed these commits to the remote repository, so only the previously pushed commit is in the remote repo (commit d75es).
+F) To bring the remote repository up-to-date with your local repository, you \verb|git push| the two new commits to the remote repository.
+The local and remote repositories now contain the same files and commit histories.
+}
+\label{fig:Fig3}
+\end{figure}
+
+\section*{Contribute to other projects}
 
 Lots of scientific software is hosted online in Git repositories.
 Now that you know the basics of Git, you can directly contribute to developing the scientific software you use for your research (Fig. \ref{fig:Fig4}).
@@ -420,24 +629,30 @@ As an exercise, you will add a file to the repository that we used to write this
 First, go to \href{https://github.com/jdblischak/git-for-science}{github.com/jdblischak/git-for-science} and choose the ``Fork'' option to create a git-for-science repository under your GitHub account (Fig. \ref{fig:Fig4}B).
 In order to make changes, download it to your computer with the command \verb|git clone| from the directory you wish the repo to appear in (Fig. \ref{fig:Fig4}C).
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git clone https://github.com/username/git-for-science.git
 \end{verbatim}
+\end{adjustwidth}
 
 Now that you have a local version, navigate to the subdirectory \verb|readers| and create a text file named as your GitHub username (Fig. \ref{fig:Fig4}D).
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ cd git-for-science/readers
 $ touch username.txt
 \end{verbatim}
+\end{adjustwidth}
 
 Add and commit this new file (Fig. \ref{fig:Fig4}D), and then push the changes back to your remote repository on GitHub (Fig. \ref{fig:Fig4}E).
 
+\begin{adjustwidth}{-0.50in}{0in}
 \begin{verbatim}
 $ git add username.txt
 $ git commit -m "Add username to directory of readers."
 $ git push origin master
 \end{verbatim}
+\end{adjustwidth}
 
 Currently, the new file you created, \verb|readers/username.txt|, only exists in your fork of git-for-science.
 To merge this file into the main repository, send a pull request using the GitHub interface (Pull request -\textgreater New pull request -\textgreater Create pull request; Fig. \ref{fig:Fig4}F; see \href{https://help.github.com/articles/using-pull-requests/}{help.github.com/articles/using-pull-requests}).
@@ -447,8 +662,26 @@ You can have others contribute to your projects using the same workflow.
 
 The ability to use Git to contribute changes is very powerful because it allows you to improve the software that is used by many other scientists and also potentially shape the future direction of its development.
 
+\begin{figure}[h]
+\cprotect\caption{{\bf Contributing to Open Source Projects.}
 
-\subsection*{Conclusion}
+We would like you to add an empty file that is named after your GitHub username to the repo used to write this manuscript.
+A) Using your internet browser, navigate to \href{https://github.com/jdblischak/git-for-science}{github.com/jdblischak/git-for-science}.
+B) Click on the ``Fork'' button to create a copy of this repo on GitHub under your username.
+C) On your computer, type \verb|git clone https://github.com/username/git-for-science.git|, which will create a copy of git-for-science on your local machine.
+D) Navigate to the \verb|readers| directory by typing \verb|cd git-for-science/readers/|.
+Create an empty file that is titled with your GitHub username by typing \verb|touch username.txt|.
+Commit that new file by adding it to the staging area (\verb|git add username.txt|) and committing with a message (\verb|git commit -m "Add username to directory of readers."|).
+Note that your commit identifier will be different than what is shown here.
+E) You have committed your new file locally and the next step is to push that new commit up to the git-for-science repo under your username on GitHub.
+To do so, type \verb|git push origin master|.
+F) To request to add your commits to the original git-for-science repo, issue a pull request from the git-for-science repo under your username on GitHub.
+Once your Pull Request is reviewed and accepted, you will be able to see the file you committed with your username in the original git-for-science repository.
+}
+\label{fig:Fig4}
+\end{figure}
+
+\section*{Conclusion}
 
 Git, albeit complicated at first, is a powerful tool that can improve code development and documentation.
 Ultimately the complexity of a VCS not only gives users a well-documented ``undo'' button for their analyses, but it also allows for collaboration and sharing of code on a massive scale.
@@ -458,35 +691,7 @@ With a few commands (\verb|git init|, \verb|git add|, \verb|git commit|), you ca
 Adding a few additional commands (\verb|git push|, \verb|git clone|, \verb|git pull|) and a GitHub account, you can share your code online, transfer your changes across machines, and collaborate in small groups (Fig. \ref{fig:Fig3}).
 Lastly, by forking public repositories and sending pull requests, you can directly improve scientific software (Fig. \ref{fig:Fig4}).
 
-
-\subsection*{Methods}
-
-We collaboratively wrote the article in LaTeX (\href{http://www.latex-project.org/}{latex-project.org}) using the online authoring platform Authorea (\href{https://www.authorea.com}{authorea.com}).
-Furthermore, we tracked the development of the document using Git and GitHub.
-The Git repo is available at \href{https://github.com/jdblischak/git-for-science}{github.com/jdblischak/git-for-science}, and the rendered LaTeX article is available at \href{https://www.authorea.com/users/5990/articles/17489}{authorea.com/users/5990/articles/17489}.
-
-\subsection*{Table 1: Resources}
-
-\begin{tabular}{|l|l|}
-    \hline
-    \textbf{Resource} & \textbf{Options} \\ \hline
-    Distibuted VCS & Git (\href{https://git-scm.com}{git-scm.com}) \\ \hline
-                   & Mercurial (\href{https://mercurial.selenic.com}{mercurial.selenic.com}) \\ \hline
-                   & Bazaar (\href{http://bazaar.canonical.com}{bazaar.canonical.com}) \\ \hline
-    Online hosting site & GitHub (\href{https://github.com}{github.com}) \\ \hline
-                        & Bitbucket (\href{https://bitbucket.org}{bitbucket.org}) \\ \hline
-                        & GitLab (\href{https://about.gitlab.com}{gitlab.com}) \\ \hline
-                        & Source Forge (\href{http://sourceforge.net}{sourceforge.net}) \\ \hline
-    Git installation & \href{https://git-scm.com/downloads}{git-scm.com/downloads} \\ \hline
-    Git Tutorials & Software Carpentry(\href{https://swcarpentry.github.io/git-novice}{swcarpentry.github.io/git-novice}) \\ \hline
-                  & Pro Git (\href{https://git-scm.com/book}{git-scm.com/book}) \\ \hline
-                  & A Visual Git Reference (\href{https://marklodato.github.io/visual-git-guide}{marklodato.github.io/visual-git-guide}) \\ \hline
-                  & tryGit (\href{https://try.github.io}{try.github.io}) \\ \hline
-    Graphical User Interface for Git & \href{https://git-scm.com/downloads/guis}{git-scm.com/downloads/guis} \\ \hline
-\end{tabular}
-
-
-\subsection*{Box 1: Definitions}
+\section*{Box 1: Definitions}
 
 \begin{itemize}
 \item \textbf{Version Control System (VCS)}: \textit{(noun)} a program that tracks changes to specified files over time and maintains a library of all past versions of those files
@@ -506,8 +711,7 @@ The Git repo is available at \href{https://github.com/jdblischak/git-for-science
 \item \textbf{pull request}: \textit{(noun)} a message sent by one GitHub user to merge the commits in their remote repository into another user's remote repository
 \end{itemize}
 
-
-\subsection*{Box 2: What \textit{not} to version control}
+\section*{Box 2: What \textit{not} to version control}
 
 You \textit{can} version control any file that you put in a Git repository, whether it is text-based, an image, or giant data files. However, just because you \textit{can} version control something, does not mean you \textit{should}. Git works best for plain text based documents such as your scripts or your manuscript if written in LaTeX or Markdown. This is because for text files, Git saves the entire file only the first time you commit it and then saves just your changes with each commit. This takes up very little space and Git has the capability to compare between versions (using \verb|git diff|). You can commit a non-text file, but a full copy of the file will be saved in each commit that modifies it. Over time, you may find the size of your repository growing very quickly. A good rule of thumb is to version control anything text based: your scripts or manuscripts if they are written in plain text. Things \textit{not} to version control are large data files that never change, binary files (including Word and Excel documents), and the output of your code.
 
@@ -522,8 +726,7 @@ In order for these settings to be applied to all instances of the repository, e.
 
 
 
-
-\subsection*{Box 3: Managing large files}
+\section*{Box 3: Managing large files}
 
 Many biological applications require handling large data files.
 While Git is best-suited for collaboratively writing small text files, nonetheless collaboratively working on projects in the biological sciences necesitates managing this data.
@@ -546,8 +749,7 @@ After installing Git LFS, you can manage all the BED files with one command: \ve
 Then you can commit the BED files just like your scripts, and they will automatically be handled with Git LFS.
 Now if you were to change the parameters of the peak calling algorithm and re-run \verb|process.sh|, you could commit the updated BED files and your collaborators could pull the new versions of the files directly to their local Git repositories.
 
-
-\subsection*{Box 4: Choosing a license}
+\section*{Box 4: Choosing a license}
 
 Putting software and other material in a public place is not the same
 as making it publicly usable.  In order to do that, the authors must
@@ -566,13 +768,11 @@ information, see Jake Vanderplas's blog post from March 2014 at
 \href{http://www.astrobetter.com/blog/2014/03/10/the-whys-and-hows-of-licensing-scientific-code/}{astrobetter.com/blog/2014/03/10/the-whys-and-hows-of-licensing-scientific-code}.
 For a more in-depth discussion of the legal implications of different licenses, see Morin et al., 2012 \cite{22844236}.
 
-
-\subsection*{Box 5: Being Scooped}
+\section*{Box 5: Being Scooped}
 
 One concern scientists frequently have about putting work in progress online is that they will be scooped, e.g., that someone will analyze their data and publish a result that they themselves would have, but hadn't yet.  In practice, though, this happens rarely if at all: in fact, the authors are not aware of a single case in which this has actually happened, and would welcome pointers to specific instances.  In practice, it seems more likely that making work public early in something like a version control repository, which automatically adds timestamps to content, will help researchers establish their priority.
 
-
-\subsection*{Box 6: Journal Policies}
+\section*{Box 6: Journal Policies}
 
 Sharing data, code, and other materials is quickly moving from ``desired'' to ``required''.
 For example, PLOS's sharing policy (\href{http://journals.plos.org/plosone/s/materials-and-software-sharing}{journals.plos.org/plosone/s/materials-and-software-sharing})
@@ -589,98 +789,77 @@ Granting agencies, philanthropic foundations, and other major sponsors of scient
 and to our knowledge,
 none has relaxed or reduced sharing requirements in the last decade.
 
-
-\subsection*{Box 7: Branching}
+\section*{Box 7: Branching}
 
 Do you ever make changes to your code, but are not sure you will want to keep those changes for your final analysis? Or do you need to implement new features while still providing a stable version of the code for others to use? Using Git, you can maintain parallel versions of your code that you can easily bounce between while you are working on your changes. You can think of it like making a copy of the folder you keep your scripts in, so that you have your original scripts intact but also have the new folder where you make changes. Using Git, this is called branching and it is better than separate folders because 1) it uses a fraction of the space on your computer, 2) keeps a record of when you made the parallel copy (branch) and what you have done on the branch, and 3) there is a way to incorporate those changes back into your main code if you decide to keep your changes (and a way to deal with conflicts). By default, your repository will start with one branch, usually called ``master''. To create a new branch in your repository, type \verb|git branch new_branch_name|. You can see what branches a current repository has by typing \verb|git branch|, with the branch you are currently in being marked by a star. To move between branches, type \verb|git checkout branch_to_move_to|. You can edit files and commit them on each branch separately. If you want combine the changes in your new branch with the master branch, you can merge the branches by typing \verb|git merge new_branch_name| while in the master branch.
 
 
 
+\section*{Methods}
 
-\subsection*{Figure Legends}
+We collaboratively wrote the article in LaTeX (\href{http://www.latex-project.org/}{latex-project.org}) using the online authoring platform Authorea (\href{https://www.authorea.com}{authorea.com}).
+Furthermore, we tracked the development of the document using Git and GitHub.
+The Git repo is available at \href{https://github.com/jdblischak/git-for-science}{github.com/jdblischak/git-for-science}, and the rendered LaTeX article is available at \href{https://www.authorea.com/users/5990/articles/17489}{authorea.com/users/5990/articles/17489}.
 
-\textbf{Figure \ref{fig:Fig1}. The git add/commit process.}
-To store a snapshot of changes in your repository, first \verb|git add| any files to the staging area you wish to commit (for example, you've updated the \verb|process.sh| file).
-Second, type \verb|git commit| with a message. Only files added to the staging area will be committed.
-All past commits are located in the hidden \verb|.git| directory in your repository.
+\nolinenumbers
 
-\textbf{Figure \ref{fig:Fig2}. Working with a local repository.}
-A) To designate a directory on your computer as a Git repo, type the command \verb|git init|.
-This initializes the repository and will allow you to track the files located within that directory.
-B) Once you have added a file, follow the git add/commit cycle to place the new file first into the staging area by typing \verb|git add| to designate it to be committed, and then \verb|git commit| to take the shapshot of that file.
-The commit is assigned a commit identifier (d75es) that can be used in the future to pull up this version or to compare different committed versions of this file.
-C) As you continue to add and change files, you should regularly add and commit those changes.
-Here, an additional commit was done and the commit log now shows two commit identifiers: d75es (from step B) and f658t (the new commit).
-Each commit will generate a unique identifier, which can be examined in reverse chronological order using \verb|git log|.
+\begin{thebibliography}{1}
 
-\textbf{Figure \ref{fig:Fig3}. Working with both a local and remote repository as a single user.}
-A) On your computer you commit to a Git repository (commit d75es).
-B) On GitHub, you create a new repository called \verb|thesis|.
-This repository is currently empty and not linked to the repo on your local machine.
-C) The command \verb|git remote add| connects your local repository to your remote repository.
-The remote repository is still empty, however, because you have not pushed any content to it.
-D) You send all the local commits to the remote repository using the command \verb|git push|.
-Only files that have been committed will appear in the remote repository.
-E) You repeat several more rounds of updating scripts and committing on your local computer (commit f658t and then commit xv871).
-You have not yet pushed these commits to the remote repository, so only the previously pushed commit is in the remote repo (commit d75es).
-F) To bring the remote repository up-to-date with your local repository, you \verb|git push| the two new commits to the remote repository.
-The local and remote repositories now contain the same files and commit histories.
+\bibitem{23448176}
+Ram K.
+\newblock {Git can facilitate greater reproducibility and increased
+  transparency in science.}
+\newblock Source Code Biol Med. 2013 Feb;8:7.
 
-\textbf{Figure \ref{fig:Fig4}. Contributing to Open Source Projects.}
-We would like you to add an empty file that is named after your GitHub username to the repo used to write this manuscript.
-A) Using your internet browser, navigate to \href{https://github.com/jdblischak/git-for-science}{github.com/jdblischak/git-for-science}.
-B) Click on the ``Fork'' button to create a copy of this repo on GitHub under your username.
-C) On your computer, type \verb|git clone https://github.com/username/git-for-science.git|, which will create a copy of git-for-science on your local machine.
-D) Navigate to the \verb|readers| directory by typing \verb|cd git-for-science/readers/|.
-Create an empty file that is titled with your GitHub username by typing \verb|touch username.txt|.
-Commit that new file by adding it to the staging area (\verb|git add username.txt|) and committing with a message (\verb|git commit -m "Add username to directory of readers."|).
-Note that your commit identifier will be different than what is shown here.
-E) You have committed your new file locally and the next step is to push that new commit up to the git-for-science repo under your username on GitHub.
-To do so, type \verb|git push origin master|.
-F) To request to add your commits to the original git-for-science repo, issue a pull request from the git-for-science repo under your username on GitHub.
-Once your Pull Request is reviewed and accepted, you will be able to see the file you committed with your username in the original git-for-science repository.
+\bibitem{24415924}
+Wilson G, Aruliah D, Brown C, Chue HN, Davis M, Guy R, et~al.
+\newblock {Best practices for scientific computing.}
+\newblock PLoS Biol. 2014 Jan;12:e1001745.
 
+\bibitem{22955616}
+{ENCODE Project Consortium}, Bernstein B, Birney E, Dunham I, Green E, Gunter
+  C, et~al.
+\newblock {An integrated encyclopedia of DNA elements in the human genome.}
+\newblock Nature. 2012 Sep;489:57--74.
 
+\bibitem{24244136}
+Bailey T, Krajewski P, Ladunga I, Lefebvre C, Li Q, Liu T, et~al.
+\newblock {Practical guidelines for the comprehensive analysis of ChIP-seq
+  data.}
+\newblock PLoS Comput Biol. 2013 null;9:e1003326.
 
+\bibitem{19649301}
+Noble W.
+\newblock {A quick guide to organizing computational biology projects.}
+\newblock PLoS Comput Biol. 2009 Jul;5:e1000424.
 
+\bibitem{22844236}
+Morin A, Urban J, Sliz P.
+\newblock {A quick guide to software licensing for the scientist-programmer.}
+\newblock PLoS Comput Biol. 2012 null;8:e1002598.
 
+\end{thebibliography}
 
+\section*{Supporting Information Legends}
 
+% Include only the SI item label in the subsection heading. Use the \nameref{label} command to cite SI items in the text.
+\subsection*{S1 Data}
+\label{S1_Data}
+{\bf process.sh.}
+This Bash script downloads the ENCODE CTCF ChIP-seq data from multiple types of kidney samples and calls peaks.
+See \href{https://github.com/jdblischak/git-for-science/tree/master/code}{github.com/jdblischak/git-for-science/tree/master/code} for instructions on running it.
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=1\columnwidth]{figures/Fig1/Fig1}
-\caption{\textbf{\label{fig:Fig1}}%
-}
-\end{center}
-\end{figure}
+\subsection*{S2 Data}
+\label{S2_Data}
+{\bf clean.py.}
+This Python script filters peaks with a fold change cutoff and merges peaks from the different kidney samples.
+See \href{https://github.com/jdblischak/git-for-science/tree/master/code}{github.com/jdblischak/git-for-science/tree/master/code} for instructions on running it.
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.7\columnwidth]{figures/Fig2/Fig2}
-\caption{\textbf{\label{fig:Fig2}}%
-}
-\end{center}
-\end{figure}
-
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.7\columnwidth]{figures/Fig3/Fig3}
-\caption{\textbf{\label{fig:Fig3}}%
-}
-\end{center}
-\end{figure}
-
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.7\columnwidth]{figures/Fig4/Fig4}
-\caption{\textbf{\label{fig:Fig4}}%
-}
-\end{center}
-\end{figure}
-
-\bibliography{bibliography/converted_to_latex.bib%
-}
+\subsection*{S3 Data}
+\label{S3_Data}
+{\bf analyze.R.}
+This R script creates diagnostic plots on the length of the peaks and their distribution across the genome.
+See \href{https://github.com/jdblischak/git-for-science/tree/master/code}{github.com/jdblischak/git-for-science/tree/master/code} for instructions on running it.
 
 \end{document}
 
