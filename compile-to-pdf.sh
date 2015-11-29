@@ -12,5 +12,6 @@ latex $BASE
 bibtex $BASE
 # Number the in-text citations
 latex $BASE
+latex $BASE
 # Convert to pdf
-pdflatex $BASE
+dvipdf $BASE
