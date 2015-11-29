@@ -16,7 +16,7 @@ def write_file(fname, blankline = 1):
     handle = open(fname, "r")
     for line in handle:
         if "Table 1" in line:
-            line = line.replace("Table 1", "Table \\ref{resources}")
+            line = line.replace("Table 1", "Table \\ref{tab:resources}")
         sys.stdout.write(line)
     handle.close()
     sys.stdout.write("\n" * blankline)
@@ -102,7 +102,7 @@ for line in table_file:
     sys.stdout.write(line)
 
 sys.stdout.write("""
-\label{resources}
+\label{tab:resources}
 \end{adjustwidth}
 \end{table}
 """
