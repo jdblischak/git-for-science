@@ -215,7 +215,7 @@ write_file("methods.tex")
 ################################################################################
 
 sys.stdout.write(r"\nolinenumbers" + "\n\n")
-sys.stdout.write(r"\bibliography{bibliography/converted_to_latex.bib}" + "\n\n")
+write_file("blischak-et-al.bbl")
 
 ################################################################################
 # End document

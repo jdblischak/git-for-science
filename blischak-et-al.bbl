@@ -1,0 +1,36 @@
+\begin{thebibliography}{1}
+
+\bibitem{23448176}
+Ram K.
+\newblock {Git can facilitate greater reproducibility and increased
+  transparency in science.}
+\newblock Source Code Biol Med. 2013 Feb;8:7.
+
+\bibitem{24415924}
+Wilson G, Aruliah D, Brown C, Chue HN, Davis M, Guy R, et~al.
+\newblock {Best practices for scientific computing.}
+\newblock PLoS Biol. 2014 Jan;12:e1001745.
+
+\bibitem{22955616}
+{ENCODE Project Consortium}, Bernstein B, Birney E, Dunham I, Green E, Gunter
+  C, et~al.
+\newblock {An integrated encyclopedia of DNA elements in the human genome.}
+\newblock Nature. 2012 Sep;489:57--74.
+
+\bibitem{24244136}
+Bailey T, Krajewski P, Ladunga I, Lefebvre C, Li Q, Liu T, et~al.
+\newblock {Practical guidelines for the comprehensive analysis of ChIP-seq
+  data.}
+\newblock PLoS Comput Biol. 2013 null;9:e1003326.
+
+\bibitem{19649301}
+Noble W.
+\newblock {A quick guide to organizing computational biology projects.}
+\newblock PLoS Comput Biol. 2009 Jul;5:e1000424.
+
+\bibitem{22844236}
+Morin A, Urban J, Sliz P.
+\newblock {A quick guide to software licensing for the scientist-programmer.}
+\newblock PLoS Comput Biol. 2012 null;8:e1002598.
+
+\end{thebibliography}
