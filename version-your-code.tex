@@ -11,9 +11,9 @@ Next download the three files provided in Supporting Information and place them 
 Imagine that as part of your thesis you are studying the transcription factor CTCF, and you want to identify high-confidence binding sites in kidney epithelial cells.
 To do this, you will utilize publicly available ChIP-seq data produced by the ENCODE consortium \cite{22955616}.
 ChIP-seq is a method for finding the sites in the genome where a transcription factor is bound, and these sites are referred to as peaks \cite{24244136}.
-\verb|process.sh| downloads the ENCODE CTCF ChIP-seq data from multiple types of kidney samples and calls peaks,
-\verb|clean.py| filters peaks with a fold change cutoff and merges peaks from the different kidney samples,
-and \verb|analyze.R| creates diagnostic plots on the length of the peaks and their distribution across the genome.
+\verb|process.sh| downloads the ENCODE CTCF ChIP-seq data from multiple types of kidney samples and calls peaks (\nameref{S1_Data}),
+\verb|clean.py| filters peaks with a fold change cutoff and merges peaks from the different kidney samples (\nameref{S2_Data}),
+and \verb|analyze.R| creates diagnostic plots on the length of the peaks and their distribution across the genome (\nameref{S3_Data}).
 
 If you have just installed Git, the first thing you need to do is provide some information about yourself, since it records who makes each change to the file(s).
 Set your name and email by running the following lines, but replacing ``First Last'' and ``user@domain'' with your full name and email address, respectively.

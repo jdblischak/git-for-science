@@ -13,6 +13,7 @@ box-5-being-scooped.tex
 box-6-sharing-policies.tex
 box-7-branching.tex
 figures/figure-legends.tex
+supporting-information-legends.tex
 figures/Fig1/Fig1.png
 figures/Fig2/Fig2.png
 figures/Fig3/Fig3.png
