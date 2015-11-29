@@ -224,7 +224,7 @@ write_file("methods.tex")
 ################################################################################
 
 sys.stdout.write(r"\nolinenumbers" + "\n\n")
-write_file("blischak-et-al.bbl")
+write_file("bibliography.bbl")
 
 ################################################################################
 # Supporting Information Legends
