@@ -12,20 +12,29 @@ import sys
 import textwrap
 import glob
 
-def write_file(fname, blankline = 1):
+def write_file(fname, blankline = 1, code_adjust = -0.5):
     """Write contents of file to standard out.
 
     Args:
         fname - the filename (str)
         blankline - the number of blank lines to add after the text (int)
+        code_adjust - the number of inches to adjust the width of the code
+                      blocks (float)
     """
     handle = open(fname, "r")
     for line in handle:
         if "Table 1" in line:
             line = line.replace("Table 1", "Table \\ref{tab:resources}")
+        if "begin{verbatim}" in line:
+             sys.stdout.write("\\begin{adjustwidth}{%.2fin}{0in}\n"%(code_adjust))
         sys.stdout.write(line)
+        if "end{verbatim}" in line:
+             sys.stdout.write("\\end{adjustwidth}\n")
     handle.close()
     sys.stdout.write("\n" * blankline)
+
+
+
 
 def write_figure(caption, label):
     """Write labeled figure with the provided caption.
