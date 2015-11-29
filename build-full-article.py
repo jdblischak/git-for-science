@@ -10,6 +10,7 @@
 
 import sys
 import textwrap
+import glob
 
 def write_file(fname, blankline = 1):
     handle = open(fname, "r")
@@ -126,6 +127,14 @@ write_file("contribute-to-other-projects.tex")
 ################################################################################
 
 write_file("conclusion.tex")
+
+################################################################################
+# Boxes
+################################################################################
+
+for i in range(7):
+    box_name = glob.glob("box-" + str(i + 1) + "-*tex")[0]
+    write_file(box_name)
 
 ################################################################################
 # Methods
