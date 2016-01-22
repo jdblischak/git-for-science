@@ -1,5 +1,10 @@
 # A quick introduction to version control with Git and GitHub
 
+This paper has been published ([link to final version][final]) as part of the PLOS Computational Biology [Education Collection][education].
+
+[final]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004668
+[education]: http://collections.plos.org/compbiol-education
+
 ## Synopsis and Motivation
 
 This is the repository for the paper "A quick introduction to version control with Git and GitHub".
