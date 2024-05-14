@@ -16,7 +16,8 @@ The full details are explained in the section [Contribute to other projects][con
 
 *  Fork the repository
 *  `git clone` the fork locally
-*  Add a file called {GitHub_username}.txt to the `readers` folder
+*  Add a file called `{GitHub_username}.txt` to the `readers` folder
+   (replace `{GitHub_username}` with your own GitHub username)
 *  `git add` + `git commit`
 *  `git push` the commit to GitHub
 *  Issue a Pull Request (PR) to incorporate the change into this repository
@@ -24,7 +25,7 @@ The full details are explained in the section [Contribute to other projects][con
 Take a look in the [readers](readers) folder to see all of the contributions from anyone who has had a Pull Request accepted.
 If you haven't contributed already, we'd love to see your PR!
 
-[contribute]: https://www.authorea.com/users/5990/articles/17489/_show_article#article-paragraph-contribute__minus__to__minus__other__minus__projects__dot__tex-landing-welcome
+[contribute]: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004668#sec011
 
 ## Example code
 
@@ -40,7 +41,7 @@ However, to both maintain a presentable version for display on Authorea (e.g. co
 Run it as follows:
 
 ```python
-python build-full-article.py > blischak-et-al.py
+python build-full-article.py > blischak-et-al.tex
 ```
 
 You should be able to run it with either major version of Python.
@@ -55,4 +56,5 @@ Thank you to all of our [contributors](https://github.com/jdblischak/git-for-sci
 
 ## License
 
-Please see our [license](LICENSE)
+[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
+Please see the file [license](LICENSE) for the full legal text.
