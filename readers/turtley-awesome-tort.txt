@@ -1,0 +1,16 @@
+Hello, I am a turtle.
+
+
+My favorite food:
+
+salad,
+cucumber,
+dandelions,
+blueberries,
+raspberries,
+strawberries,
+carrots,
+
+My favorite activities:
+eating,
+sleeping
