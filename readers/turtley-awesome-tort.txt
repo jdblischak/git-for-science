@@ -13,4 +13,5 @@ carrots,
 
 My favorite activities:
 eating,
-sleeping
+sleeping,
+doing nothing
